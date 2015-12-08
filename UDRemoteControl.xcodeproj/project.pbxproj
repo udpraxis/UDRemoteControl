@@ -1,0 +1,604 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		48605E8E1C14798200302EE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48605E8D1C14798200302EE7 /* AppDelegate.swift */; };
+		48605E951C14798200302EE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48605E931C14798200302EE7 /* Main.storyboard */; };
+		48605E971C14798200302EE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48605E961C14798200302EE7 /* Assets.xcassets */; };
+		48605E9A1C14798200302EE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48605E981C14798200302EE7 /* LaunchScreen.storyboard */; };
+		48605EA51C14798200302EE7 /* UDRemoteControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48605EA41C14798200302EE7 /* UDRemoteControlTests.swift */; };
+		48605EB01C14798200302EE7 /* UDRemoteControlUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48605EAF1C14798200302EE7 /* UDRemoteControlUITests.swift */; };
+		48605ECD1C147FC700302EE7 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48605ECC1C147FC700302EE7 /* JoinViewController.swift */; };
+		48605ECF1C147FE200302EE7 /* RemotePanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48605ECE1C147FE200302EE7 /* RemotePanelViewController.swift */; };
+		48605ED11C147FEF00302EE7 /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48605ED01C147FEF00302EE7 /* DeviceViewController.swift */; };
+		48605ED31C147FF900302EE7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48605ED21C147FF900302EE7 /* SettingsViewController.swift */; };
+		48605EDB1C14870200302EE7 /* yudpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48605ED61C14870200302EE7 /* yudpsocket.swift */; };
+		48605EDC1C14870200302EE7 /* yudpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 48605ED71C14870200302EE7 /* yudpsocket.c */; };
+		48605EDD1C14870200302EE7 /* ytcpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48605ED81C14870200302EE7 /* ytcpsocket.swift */; };
+		48605EDE1C14870200302EE7 /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 48605ED91C14870200302EE7 /* ytcpsocket.c */; };
+		48605EDF1C14870200302EE7 /* ysocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48605EDA1C14870200302EE7 /* ysocket.swift */; };
+		48AE9D361C15354A00D46DBF /* Documentation in Resources */ = {isa = PBXBuildFile; fileRef = 48AE9D351C15354A00D46DBF /* Documentation */; };
+		48D668741C163800008E5557 /* beschleuniger_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 48D668731C163800008E5557 /* beschleuniger_btn.png */; };
+		48D668761C163810008E5557 /* Lengkung.png in Resources */ = {isa = PBXBuildFile; fileRef = 48D668751C163810008E5557 /* Lengkung.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		48605EA11C14798200302EE7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48605E821C14798200302EE7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 48605E891C14798200302EE7;
+			remoteInfo = UDRemoteControl;
+		};
+		48605EAC1C14798200302EE7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48605E821C14798200302EE7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 48605E891C14798200302EE7;
+			remoteInfo = UDRemoteControl;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		48605E8A1C14798200302EE7 /* UDRemoteControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UDRemoteControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		48605E8D1C14798200302EE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		48605E941C14798200302EE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		48605E961C14798200302EE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		48605E991C14798200302EE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		48605E9B1C14798200302EE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48605EA01C14798200302EE7 /* UDRemoteControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UDRemoteControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		48605EA41C14798200302EE7 /* UDRemoteControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDRemoteControlTests.swift; sourceTree = "<group>"; };
+		48605EA61C14798200302EE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48605EAB1C14798200302EE7 /* UDRemoteControlUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UDRemoteControlUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		48605EAF1C14798200302EE7 /* UDRemoteControlUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDRemoteControlUITests.swift; sourceTree = "<group>"; };
+		48605EB11C14798200302EE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48605ECC1C147FC700302EE7 /* JoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
+		48605ECE1C147FE200302EE7 /* RemotePanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemotePanelViewController.swift; sourceTree = "<group>"; };
+		48605ED01C147FEF00302EE7 /* DeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
+		48605ED21C147FF900302EE7 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		48605ED51C14870200302EE7 /* UDRemoteControl-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UDRemoteControl-Bridging-Header.h"; sourceTree = "<group>"; };
+		48605ED61C14870200302EE7 /* yudpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = yudpsocket.swift; path = "../../../Library/SwiftSocket-master/SwiftSocket/ysocket/yudpsocket.swift"; sourceTree = "<group>"; };
+		48605ED71C14870200302EE7 /* yudpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = yudpsocket.c; path = "../../../Library/SwiftSocket-master/SwiftSocket/ysocket/yudpsocket.c"; sourceTree = "<group>"; };
+		48605ED81C14870200302EE7 /* ytcpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ytcpsocket.swift; path = "../../../Library/SwiftSocket-master/SwiftSocket/ysocket/ytcpsocket.swift"; sourceTree = "<group>"; };
+		48605ED91C14870200302EE7 /* ytcpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ytcpsocket.c; path = "../../../Library/SwiftSocket-master/SwiftSocket/ysocket/ytcpsocket.c"; sourceTree = "<group>"; };
+		48605EDA1C14870200302EE7 /* ysocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ysocket.swift; path = "../../../Library/SwiftSocket-master/SwiftSocket/ysocket/ysocket.swift"; sourceTree = "<group>"; };
+		48AE9D351C15354A00D46DBF /* Documentation */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Documentation; sourceTree = "<group>"; };
+		48D668731C163800008E5557 /* beschleuniger_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = beschleuniger_btn.png; path = ../../../../Downloads/beschleuniger_btn.png; sourceTree = "<group>"; };
+		48D668751C163810008E5557 /* Lengkung.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Lengkung.png; path = ../../../../Downloads/Lengkung.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		48605E871C14798200302EE7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48605E9D1C14798200302EE7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48605EA81C14798200302EE7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		48605E811C14798200302EE7 = {
+			isa = PBXGroup;
+			children = (
+				48605E8C1C14798200302EE7 /* UDRemoteControl */,
+				48605EA31C14798200302EE7 /* UDRemoteControlTests */,
+				48605EAE1C14798200302EE7 /* UDRemoteControlUITests */,
+				48605E8B1C14798200302EE7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		48605E8B1C14798200302EE7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				48605E8A1C14798200302EE7 /* UDRemoteControl.app */,
+				48605EA01C14798200302EE7 /* UDRemoteControlTests.xctest */,
+				48605EAB1C14798200302EE7 /* UDRemoteControlUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		48605E8C1C14798200302EE7 /* UDRemoteControl */ = {
+			isa = PBXGroup;
+			children = (
+				48AE9D341C15352A00D46DBF /* Documentation */,
+				48605ED41C1486BA00302EE7 /* Libraries */,
+				48605EC11C1479D200302EE7 /* Supporting Files */,
+				48605EC01C1479C600302EE7 /* View */,
+				48605EBF1C1479BE00302EE7 /* Controller */,
+			);
+			path = UDRemoteControl;
+			sourceTree = "<group>";
+		};
+		48605EA31C14798200302EE7 /* UDRemoteControlTests */ = {
+			isa = PBXGroup;
+			children = (
+				48605EA41C14798200302EE7 /* UDRemoteControlTests.swift */,
+				48605EA61C14798200302EE7 /* Info.plist */,
+			);
+			path = UDRemoteControlTests;
+			sourceTree = "<group>";
+		};
+		48605EAE1C14798200302EE7 /* UDRemoteControlUITests */ = {
+			isa = PBXGroup;
+			children = (
+				48605EAF1C14798200302EE7 /* UDRemoteControlUITests.swift */,
+				48605EB11C14798200302EE7 /* Info.plist */,
+			);
+			path = UDRemoteControlUITests;
+			sourceTree = "<group>";
+		};
+		48605EBF1C1479BE00302EE7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				48605ECC1C147FC700302EE7 /* JoinViewController.swift */,
+				48605ECE1C147FE200302EE7 /* RemotePanelViewController.swift */,
+				48605ED01C147FEF00302EE7 /* DeviceViewController.swift */,
+				48605ED21C147FF900302EE7 /* SettingsViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		48605EC01C1479C600302EE7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				48605E931C14798200302EE7 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		48605EC11C1479D200302EE7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				48D668751C163810008E5557 /* Lengkung.png */,
+				48D668731C163800008E5557 /* beschleuniger_btn.png */,
+				48605E9B1C14798200302EE7 /* Info.plist */,
+				48605E981C14798200302EE7 /* LaunchScreen.storyboard */,
+				48605E8D1C14798200302EE7 /* AppDelegate.swift */,
+				48605E961C14798200302EE7 /* Assets.xcassets */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		48605ED41C1486BA00302EE7 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				48605ED61C14870200302EE7 /* yudpsocket.swift */,
+				48605ED71C14870200302EE7 /* yudpsocket.c */,
+				48605ED81C14870200302EE7 /* ytcpsocket.swift */,
+				48605ED91C14870200302EE7 /* ytcpsocket.c */,
+				48605EDA1C14870200302EE7 /* ysocket.swift */,
+				48605ED51C14870200302EE7 /* UDRemoteControl-Bridging-Header.h */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		48AE9D341C15352A00D46DBF /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				48AE9D351C15354A00D46DBF /* Documentation */,
+			);
+			name = Documentation;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		48605E891C14798200302EE7 /* UDRemoteControl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48605EB41C14798200302EE7 /* Build configuration list for PBXNativeTarget "UDRemoteControl" */;
+			buildPhases = (
+				48605E861C14798200302EE7 /* Sources */,
+				48605E871C14798200302EE7 /* Frameworks */,
+				48605E881C14798200302EE7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UDRemoteControl;
+			productName = UDRemoteControl;
+			productReference = 48605E8A1C14798200302EE7 /* UDRemoteControl.app */;
+			productType = "com.apple.product-type.application";
+		};
+		48605E9F1C14798200302EE7 /* UDRemoteControlTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48605EB71C14798200302EE7 /* Build configuration list for PBXNativeTarget "UDRemoteControlTests" */;
+			buildPhases = (
+				48605E9C1C14798200302EE7 /* Sources */,
+				48605E9D1C14798200302EE7 /* Frameworks */,
+				48605E9E1C14798200302EE7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				48605EA21C14798200302EE7 /* PBXTargetDependency */,
+			);
+			name = UDRemoteControlTests;
+			productName = UDRemoteControlTests;
+			productReference = 48605EA01C14798200302EE7 /* UDRemoteControlTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		48605EAA1C14798200302EE7 /* UDRemoteControlUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48605EBA1C14798200302EE7 /* Build configuration list for PBXNativeTarget "UDRemoteControlUITests" */;
+			buildPhases = (
+				48605EA71C14798200302EE7 /* Sources */,
+				48605EA81C14798200302EE7 /* Frameworks */,
+				48605EA91C14798200302EE7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				48605EAD1C14798200302EE7 /* PBXTargetDependency */,
+			);
+			name = UDRemoteControlUITests;
+			productName = UDRemoteControlUITests;
+			productReference = 48605EAB1C14798200302EE7 /* UDRemoteControlUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		48605E821C14798200302EE7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = UDLab;
+				TargetAttributes = {
+					48605E891C14798200302EE7 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 9RUC64926T;
+					};
+					48605E9F1C14798200302EE7 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 9RUC64926T;
+						TestTargetID = 48605E891C14798200302EE7;
+					};
+					48605EAA1C14798200302EE7 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 9RUC64926T;
+						TestTargetID = 48605E891C14798200302EE7;
+					};
+				};
+			};
+			buildConfigurationList = 48605E851C14798200302EE7 /* Build configuration list for PBXProject "UDRemoteControl" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 48605E811C14798200302EE7;
+			productRefGroup = 48605E8B1C14798200302EE7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				48605E891C14798200302EE7 /* UDRemoteControl */,
+				48605E9F1C14798200302EE7 /* UDRemoteControlTests */,
+				48605EAA1C14798200302EE7 /* UDRemoteControlUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		48605E881C14798200302EE7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48605E9A1C14798200302EE7 /* LaunchScreen.storyboard in Resources */,
+				48605E971C14798200302EE7 /* Assets.xcassets in Resources */,
+				48605E951C14798200302EE7 /* Main.storyboard in Resources */,
+				48AE9D361C15354A00D46DBF /* Documentation in Resources */,
+				48D668761C163810008E5557 /* Lengkung.png in Resources */,
+				48D668741C163800008E5557 /* beschleuniger_btn.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48605E9E1C14798200302EE7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48605EA91C14798200302EE7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		48605E861C14798200302EE7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48605EDC1C14870200302EE7 /* yudpsocket.c in Sources */,
+				48605ECF1C147FE200302EE7 /* RemotePanelViewController.swift in Sources */,
+				48605EDD1C14870200302EE7 /* ytcpsocket.swift in Sources */,
+				48605EDE1C14870200302EE7 /* ytcpsocket.c in Sources */,
+				48605ED11C147FEF00302EE7 /* DeviceViewController.swift in Sources */,
+				48605ECD1C147FC700302EE7 /* JoinViewController.swift in Sources */,
+				48605EDF1C14870200302EE7 /* ysocket.swift in Sources */,
+				48605E8E1C14798200302EE7 /* AppDelegate.swift in Sources */,
+				48605ED31C147FF900302EE7 /* SettingsViewController.swift in Sources */,
+				48605EDB1C14870200302EE7 /* yudpsocket.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48605E9C1C14798200302EE7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48605EA51C14798200302EE7 /* UDRemoteControlTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48605EA71C14798200302EE7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48605EB01C14798200302EE7 /* UDRemoteControlUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		48605EA21C14798200302EE7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 48605E891C14798200302EE7 /* UDRemoteControl */;
+			targetProxy = 48605EA11C14798200302EE7 /* PBXContainerItemProxy */;
+		};
+		48605EAD1C14798200302EE7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 48605E891C14798200302EE7 /* UDRemoteControl */;
+			targetProxy = 48605EAC1C14798200302EE7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		48605E931C14798200302EE7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48605E941C14798200302EE7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		48605E981C14798200302EE7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48605E991C14798200302EE7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		48605EB21C14798200302EE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		48605EB31C14798200302EE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		48605EB51C14798200302EE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = UDRemoteControl/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = UDlab.Praxis.UDRemoteControl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "UDRemoteControl/UDRemoteControl-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		48605EB61C14798200302EE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = UDRemoteControl/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = UDlab.Praxis.UDRemoteControl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "UDRemoteControl/UDRemoteControl-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		48605EB81C14798200302EE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = UDRemoteControlTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = UDlab.Praxis.UDRemoteControlTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UDRemoteControl.app/UDRemoteControl";
+			};
+			name = Debug;
+		};
+		48605EB91C14798200302EE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = UDRemoteControlTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = UDlab.Praxis.UDRemoteControlTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UDRemoteControl.app/UDRemoteControl";
+			};
+			name = Release;
+		};
+		48605EBB1C14798200302EE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = UDRemoteControlUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = UDlab.Praxis.UDRemoteControlUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = UDRemoteControl;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		48605EBC1C14798200302EE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = UDRemoteControlUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = UDlab.Praxis.UDRemoteControlUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = UDRemoteControl;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		48605E851C14798200302EE7 /* Build configuration list for PBXProject "UDRemoteControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48605EB21C14798200302EE7 /* Debug */,
+				48605EB31C14798200302EE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48605EB41C14798200302EE7 /* Build configuration list for PBXNativeTarget "UDRemoteControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48605EB51C14798200302EE7 /* Debug */,
+				48605EB61C14798200302EE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48605EB71C14798200302EE7 /* Build configuration list for PBXNativeTarget "UDRemoteControlTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48605EB81C14798200302EE7 /* Debug */,
+				48605EB91C14798200302EE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48605EBA1C14798200302EE7 /* Build configuration list for PBXNativeTarget "UDRemoteControlUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48605EBB1C14798200302EE7 /* Debug */,
+				48605EBC1C14798200302EE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 48605E821C14798200302EE7 /* Project object */;
+}

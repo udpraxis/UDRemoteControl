@@ -23,6 +23,9 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
     @IBOutlet weak var Acceleration_label: UILabel!
     @IBOutlet weak var Rotation_labe: UILabel!
     
+    //Useful to send a constant data about the vorward speed negleting all the gyro and hand gesture
+    @IBOutlet weak var istKonstantBeschleunigung: UISwitch!
+    
     @IBOutlet weak var Up_Down: UIView!
     @IBOutlet weak var Left_Right: UIView!
     
@@ -41,6 +44,8 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
     
     @IBOutlet weak var Beschleunigen_btn: UIImageView!
     @IBOutlet weak var Lengkung_btn: UIImageView!
+    
+    var firstValidOnceStatechange = true
     
     
     
@@ -109,6 +114,10 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
         y_rota.text = ""
         z_rota.text = ""
         
+        
+        
+        Beschleunigen_btn.center.y = Up_Down.bounds.height/2
+        Lengkung_btn.center.x = Left_Right.bounds.width/2
     }
     
     //Use this to calibrate the gyro before use
@@ -226,7 +235,8 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
     }
     
     override func viewDidLoad() {
-       
+       print(Up_Down.bounds.maxY)
+        print(Up_Down.bounds.minY)
     }
     
     @IBAction func LengkungPan(sender: UIPanGestureRecognizer) {
@@ -236,10 +246,25 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
         if Left_Right.hidden == false && Lengkung_btn.hidden == false{
             let translation = sender.translationInView(self.view)
             if let view = sender.view{
-                    
-                  if (Lengkung_btn.center.x > Left_Right.bounds.minX + 5 )&&(Lengkung_btn.center.x < Left_Right.bounds.maxX  ){
+            print(translation)
+                if (Lengkung_btn.center.x > 3.0 )&&(Lengkung_btn.center.x < 258.0 ){
                     view.center = CGPoint(x: view.center.x + translation.x, y: view.center.y)
-                  }
+                }
+                
+                //Avoid the possibile of jamming the button
+                if(Lengkung_btn.center.x >= 258.0){
+                    if(translation.x <= 0.0){
+                        view.center = CGPoint(x: view.center.x + translation.x, y: view.center.y)
+                    }
+                }
+                
+                if(Lengkung_btn.center.x <= 3.0){
+                    if(translation.x >= 0.0)
+                    {
+                        view.center = CGPoint(x: view.center.x + translation.x, y: view.center.y)
+                    }
+                }
+                
             
             }
                 sender.setTranslation(CGPointZero, inView: self.view)
@@ -253,30 +278,45 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
         
     }
     
+    
+    
     @IBAction func BeschleunigungPan(sender: UIPanGestureRecognizer) {
         if Up_Down.hidden == false && Beschleunigen_btn.hidden == false{
             let translation = sender.translationInView(self.view)
-            print(translation)
             if let view  = sender.view{
-                if(Beschleunigen_btn.center.y > Up_Down.bounds.minY + 5) && (Beschleunigen_btn.center.y < Up_Down.bounds.maxY) {
+                if(Beschleunigen_btn.center.y > 3.0) && (Beschleunigen_btn.center.y < 258.0 ) {
                     view.center = CGPoint(x: view.center.x , y: view.center.y + translation.y)
+                    print(Beschleunigen_btn.center.y)
                 }
                 
+                
+                // this part of the code is to avoid jamming the beschleuniger_btn when it reaches the critical point of the min and max edge
+                if(Beschleunigen_btn.center.y >= 258.0){
+                    if(translation.y <= 0.0){
+                        view.center = CGPoint(x: view.center.x, y: view.center.y + translation.y)
+                    }
+                }
+                
+                if(Beschleunigen_btn.center.y <= 3.0){
+                    if(translation.y >= 0.0){
+                        view.center = CGPoint(x: view.center.x, y: view.center.y + translation.y)
+                    }
+                }
+
             }
     
             sender.setTranslation(CGPointZero, inView: self.view)
         }
         
-        if sender.state == UIGestureRecognizerState.Ended{
-            Beschleunigen_btn.center.y = Up_Down.bounds.height/2
+        if istKonstantBeschleunigung.on == false{
+            //This will ensure the center of the btn is back to initial position a msg is also sent to the server
+            if sender.state == UIGestureRecognizerState.Ended{
+                
+                Beschleunigen_btn.center.y = Up_Down.bounds.height/2
+            }
         }
         
     }
-
-    
-    
-    
-      
 }
 
 

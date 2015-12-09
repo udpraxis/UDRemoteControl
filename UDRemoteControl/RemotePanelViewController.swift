@@ -10,8 +10,9 @@ import UIKit
 import CoreMotion
 
 class RemotePanelViewController: UIViewController, SettingDelegates{
-
+    
     var delegate : DataSendDelegate?
+    
     
     
     //Motion manager
@@ -40,6 +41,8 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
     
     @IBOutlet weak var Beschleunigen_btn: UIImageView!
     @IBOutlet weak var Lengkung_btn: UIImageView!
+    
+    
     
     @IBAction func GyroOption(sender: UISwitch) {
         
@@ -105,6 +108,7 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
         x_rota.text = ""
         y_rota.text = ""
         z_rota.text = ""
+        
     }
     
     //Use this to calibrate the gyro before use
@@ -214,19 +218,74 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
     override func viewDidDisappear(animated: Bool) {
         motionManager.stopAccelerometerUpdates()
         motionManager.startGyroUpdates()
-    }
-    
-    override func viewDidLoad() {
+        Gyro_Manual.on = false
+        
+        
+        
         
     }
     
+    override func viewDidLoad() {
+       
+    }
     
-
+    @IBAction func LengkungPan(sender: UIPanGestureRecognizer) {
+   
+        //Why this Left_Righ(View) and the Lengkung_btn is checked because
+        //deactivating the gyro will produce error
+        if Left_Right.hidden == false && Lengkung_btn.hidden == false{
+            let translation = sender.translationInView(self.view)
+            print(translation)
+                if let view = sender.view{
+                    
+                  if (Lengkung_btn.center.x > Left_Right.bounds.minX + 5 )&&(Lengkung_btn.center.x < Left_Right.bounds.maxX  ){
+                    view.center = CGPoint(x: view.center.x + translation.x, y: view.center.y)
+                  }
+            
+            }
+                sender.setTranslation(CGPointZero, inView: self.view)
+            
+        }
+        
+     
+        if sender.state == UIGestureRecognizerState.Ended{
+            Lengkung_btn.center.x = Left_Right.bounds.width/2
+        }
+        
+    }
+    
+    @IBAction func BeschleunigungPan(sender: UIPanGestureRecognizer) {
+        
+        //Why this Left_Righ(View) and the Lengkung_btn is checked because
+        //deactivating the gyro will produce error
+        if Up_Down.hidden == false && Beschleunigen_btn.hidden == false{
+            let translation = sender.translationInView(self.view)
+            print(translation)
+            if let view = sender.view{
+                
+                if (Beschleunigen_btn.center.y > Up_Down.bounds.minY )&&(Beschleunigen_btn.center.y < Up_Down.bounds.maxY){
+                    view.center = CGPoint(x: view.center.x, y: view.center.y + translation.y)
+                }
+                
+            }
+            sender.setTranslation(CGPointZero, inView: self.view)
+            
+        }
+        
+        
+        if sender.state == UIGestureRecognizerState.Ended{
+            Beschleunigen_btn.center.y = Up_Down.bounds.height/2
+        }
+        
+    }
 
     
     
-
+    
+      
 }
+
+
 
 //Delegate to send data to TcpConnection in JoinViewController
 protocol DataSendDelegate: class{

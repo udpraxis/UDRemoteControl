@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4847814E1C1779F0009AF0B8 /* ClientServerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847814D1C1779F0009AF0B8 /* ClientServerModel.swift */; };
 		48605E8E1C14798200302EE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48605E8D1C14798200302EE7 /* AppDelegate.swift */; };
 		48605E951C14798200302EE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48605E931C14798200302EE7 /* Main.storyboard */; };
 		48605E971C14798200302EE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48605E961C14798200302EE7 /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4847814D1C1779F0009AF0B8 /* ClientServerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientServerModel.swift; sourceTree = "<group>"; };
 		48605E8A1C14798200302EE7 /* UDRemoteControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UDRemoteControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48605E8D1C14798200302EE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48605E941C14798200302EE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -97,6 +99,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		484781461C1761AA009AF0B8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4847814D1C1779F0009AF0B8 /* ClientServerModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		48605E811C14798200302EE7 = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +130,7 @@
 		48605E8C1C14798200302EE7 /* UDRemoteControl */ = {
 			isa = PBXGroup;
 			children = (
+				484781461C1761AA009AF0B8 /* Model */,
 				48AE9D341C15352A00D46DBF /* Documentation */,
 				48605ED41C1486BA00302EE7 /* Libraries */,
 				48605EC11C1479D200302EE7 /* Supporting Files */,
@@ -344,6 +355,7 @@
 				48605ED11C147FEF00302EE7 /* DeviceViewController.swift in Sources */,
 				48605ECD1C147FC700302EE7 /* JoinViewController.swift in Sources */,
 				48605EDF1C14870200302EE7 /* ysocket.swift in Sources */,
+				4847814E1C1779F0009AF0B8 /* ClientServerModel.swift in Sources */,
 				48605E8E1C14798200302EE7 /* AppDelegate.swift in Sources */,
 				48605ED31C147FF900302EE7 /* SettingsViewController.swift in Sources */,
 				48605EDB1C14870200302EE7 /* yudpsocket.swift in Sources */,

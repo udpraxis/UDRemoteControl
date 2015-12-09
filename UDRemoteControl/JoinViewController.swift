@@ -61,7 +61,7 @@ class JoinViewController: UIViewController , DataSendDelegate{
             Status.text = "Bitte geben Server IP ein  "
             }
         }else{
-            tcpConnect(Address: "192.168.1.104", Port: 8000 )
+            tcpConnect(Address: "192.168.1.103", Port: 8000 )
         }
  
     }

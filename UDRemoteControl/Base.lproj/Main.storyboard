@@ -91,9 +91,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="122" y="60" width="68" height="24"/>
-                                        </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXK-Et-kyS">
                                         <rect key="frame" x="115" y="5" width="80" height="27"/>
@@ -428,7 +425,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HVG-NY-0ZT">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beschleuniger_btn.png" translatesAutoresizingMaskIntoConstraints="NO" id="5X7-XY-My4">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beschleuniger_btn.png" translatesAutoresizingMaskIntoConstraints="NO" id="5X7-XY-My4">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <animations/>
                                         <gestureRecognizers/>
@@ -706,7 +703,7 @@
                 </panGestureRecognizer>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="nPT-ue-Qqp">
                     <connections>
-                        <action selector="BeschleunigungPan:" destination="8rJ-Kc-sve" id="S1d-kk-eiT"/>
+                        <action selector="BeschleunigungPan:" destination="8rJ-Kc-sve" id="iPG-Ba-ndI"/>
                     </connections>
                 </panGestureRecognizer>
             </objects>

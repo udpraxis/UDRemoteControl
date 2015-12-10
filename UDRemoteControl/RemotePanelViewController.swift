@@ -12,8 +12,13 @@ import CoreMotion
 class RemotePanelViewController: UIViewController, SettingDelegates{
     
     var delegate : DataSendDelegate?
+    var delegateRetrive : SettingDataRetrive?
     
-    
+    var timer = NSTimer()
+    var startcommandisactive = false
+   
+    @IBOutlet weak var stopaction_btn: UIButton!
+    @IBOutlet weak var startaction_btn: UIButton!
     
     //Motion manager
     var motionManager = CMMotionManager()
@@ -38,14 +43,17 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
     @IBOutlet weak var y_rota: UILabel!
     @IBOutlet weak var z_rota: UILabel!
     
-    @IBOutlet weak var Constant_Acceleration: UILabel!
-    @IBOutlet weak var StaticAccelerationDuringNonGyro: UISwitch!
     
     
     @IBOutlet weak var Beschleunigen_btn: UIImageView!
     @IBOutlet weak var Lengkung_btn: UIImageView!
     
-    var firstValidOnceStatechange = true
+    
+    
+    //Data from the SettingViewController
+    var isAccelerationGyroRV:Bool = true
+    var isSteeringGyroRV:Bool = true
+    var gyroupdateinterval:NSTimeInterval = 0.5
     
     
     
@@ -53,6 +61,13 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
         
         if sender.on{
             
+            
+            if startcommandisactive{
+                timer.invalidate()
+                stopaction_btn.hidden = true
+            }
+            
+            startaction_btn.hidden = true
             Beschleunigen_btn.hidden = true
             Lengkung_btn.hidden = true
             Up_Down.hidden = true
@@ -62,8 +77,8 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
             Rotation_labe.hidden = false
             
             //Getting the Time interval for the update
-            motionManager.accelerometerUpdateInterval = 0.5
-            motionManager.gyroUpdateInterval = 0.5
+            motionManager.accelerometerUpdateInterval = gyroupdateinterval
+            motionManager.gyroUpdateInterval = gyroupdateinterval
             
             motionManager.startAccelerometerUpdatesToQueue(NSOperationQueue.currentQueue()!, withHandler: {(accelerometerData: CMAccelerometerData? , error: NSError?) -> Void in
                 self.outputAccelerationData(accelerometerData!.acceleration)
@@ -84,8 +99,7 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
             
         }else{
             
-            motionManager.stopAccelerometerUpdates()
-            motionManager.stopGyroUpdates()
+            
             reset()
 
         }
@@ -97,7 +111,9 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
     //Reset Function to set the property to when gyro is not available
     func reset(){
         
-        
+        motionManager.stopAccelerometerUpdates()
+        motionManager.stopGyroUpdates()
+        startaction_btn.hidden = false
         Acceleration_label.hidden = true
         Rotation_labe.hidden = true
         
@@ -105,6 +121,7 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
         Beschleunigen_btn.hidden = false
         Up_Down.hidden = false
         Left_Right.hidden = false
+        Gyro_Manual.on = false
         
         x_acce.text = ""
         y_acce.text = ""
@@ -179,8 +196,10 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
     
     
     //The Funtion to get the data from SettingsViewController
-    func settings(gyro_senstivitiy: Float, isAccelerationGyro: Bool, isSteeringGyro: Bool) {
-        
+    func settings(gyro_senstivitiy: NSTimeInterval, isAccelerationGyro: Bool, isSteeringGyro: Bool) {
+        isAccelerationGyroRV = isAccelerationGyro
+        isSteeringGyroRV = isSteeringGyro
+        gyroupdateinterval = gyro_senstivitiy
     }
     
     func tcpsendinfo(dataX dataX: Float,dataY:Float,dataZ:Float){
@@ -224,19 +243,25 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
         return s_data
     }
     
+    
+    
     override func viewDidDisappear(animated: Bool) {
+        
+        //This is important to stop the motionupdate if the user change the page
         motionManager.stopAccelerometerUpdates()
-        motionManager.startGyroUpdates()
-        Gyro_Manual.on = false
-        
-        
-        
+        motionManager.stopGyroUpdates()
+        reset()
+        //Do not delete the above code
+
         
     }
     
     override func viewDidLoad() {
-       print(Up_Down.bounds.maxY)
-        print(Up_Down.bounds.minY)
+        delegateRetrive?.activateDelegateCommunication()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+      
     }
     
     @IBAction func LengkungPan(sender: UIPanGestureRecognizer) {
@@ -246,7 +271,6 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
         if Left_Right.hidden == false && Lengkung_btn.hidden == false{
             let translation = sender.translationInView(self.view)
             if let view = sender.view{
-            print(translation)
                 if (Lengkung_btn.center.x > 3.0 )&&(Lengkung_btn.center.x < 258.0 ){
                     view.center = CGPoint(x: view.center.x + translation.x, y: view.center.y)
                 }
@@ -267,6 +291,8 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
                 
             
             }
+            
+            
                 sender.setTranslation(CGPointZero, inView: self.view)
             
         }
@@ -286,7 +312,7 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
             if let view  = sender.view{
                 if(Beschleunigen_btn.center.y > 3.0) && (Beschleunigen_btn.center.y < 258.0 ) {
                     view.center = CGPoint(x: view.center.x , y: view.center.y + translation.y)
-                    print(Beschleunigen_btn.center.y)
+                    
                 }
                 
                 
@@ -304,6 +330,8 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
                 }
 
             }
+            
+            
     
             sender.setTranslation(CGPointZero, inView: self.view)
         }
@@ -317,6 +345,48 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
         }
         
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "FromRemoteToSettting"{
+            let settingVC:SettingsViewController = segue.destinationViewController as! SettingsViewController
+            settingVC.delegate  = self
+        }
+    }
+    
+    
+    //funtion what happens when the button start is pressed
+    @IBAction func Start_Action(sender: UIButton) {
+        startaction_btn.hidden = true
+        stopaction_btn.hidden = false
+        startcommandisactive = true
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "dataManagerIfNonGyroDataIssend", userInfo: nil, repeats: true)
+        
+    }
+    
+    @IBAction func Stop_Action(sender: UIButton) {
+        
+        timer.invalidate()
+        startaction_btn.hidden = false
+        stopaction_btn.hidden = true
+        startcommandisactive = false
+    }
+    
+
+    
+    
+    func dataManagerIfNonGyroDataIssend(){
+        
+        let dataSpeed = String(258 - Int(Beschleunigen_btn.center.y))
+        let dataSteering = String(Int(Lengkung_btn.center.x))
+        
+        
+        let accumulatedData:String = "MC" + ":" + dataSpeed + ":" + dataSteering
+
+        print("This is the speed", dataSpeed)
+        print("This is the Turning",dataSteering)
+        
+        delegate?.dataSend(accumulatedData)
+    }
 }
 
 
@@ -324,4 +394,10 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
 //Delegate to send data to TcpConnection in JoinViewController
 protocol DataSendDelegate: class{
     func dataSend(data:String)
+}
+
+
+//Protocol to make the communication to retrieve
+protocol SettingDataRetrive: class{
+    func activateDelegateCommunication()
 }

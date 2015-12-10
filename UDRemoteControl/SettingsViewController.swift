@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController, SettingDataRetrive {
 
     var delegate:SettingDelegates?
     
@@ -21,7 +21,7 @@ class SettingsViewController: UIViewController {
    
     
     func sendDataToRemoteViewController(){
-        let gyro_Senstivity = GyroSentivity.value
+        let gyro_Senstivity = NSTimeInterval(GyroSentivity.value)
         let implementAccelerationGyro = GyroForAcceleration.on
         let implementSteeringGyro = GyroForSteering.on
         
@@ -29,8 +29,12 @@ class SettingsViewController: UIViewController {
     }
     
     
+    func activateDelegateCommunication() {
+        sendDataToRemoteViewController()
+    }
+    
 }
 
 protocol SettingDelegates: class{
-    func settings(gyro_senstivitiy:Float, isAccelerationGyro:Bool,isSteeringGyro:Bool)
+    func settings(gyro_senstivitiy:NSTimeInterval, isAccelerationGyro:Bool,isSteeringGyro:Bool)
 }

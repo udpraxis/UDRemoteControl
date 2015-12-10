@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		480B706A1C1914A30061AEFB /* SplashScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 480B70691C1914A30061AEFB /* SplashScreen.png */; };
 		4847814E1C1779F0009AF0B8 /* ClientServerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847814D1C1779F0009AF0B8 /* ClientServerModel.swift */; };
 		48605E8E1C14798200302EE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48605E8D1C14798200302EE7 /* AppDelegate.swift */; };
 		48605E951C14798200302EE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48605E931C14798200302EE7 /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		480B70691C1914A30061AEFB /* SplashScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SplashScreen.png; path = ../../../../Downloads/SplashScreen.png; sourceTree = "<group>"; };
 		4847814D1C1779F0009AF0B8 /* ClientServerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientServerModel.swift; sourceTree = "<group>"; };
 		48605E8A1C14798200302EE7 /* UDRemoteControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UDRemoteControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48605E8D1C14798200302EE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 		48605EC11C1479D200302EE7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				480B70691C1914A30061AEFB /* SplashScreen.png */,
 				48D668751C163810008E5557 /* Lengkung.png */,
 				48D668731C163800008E5557 /* beschleuniger_btn.png */,
 				48605E9B1C14798200302EE7 /* Info.plist */,
@@ -318,6 +321,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				480B706A1C1914A30061AEFB /* SplashScreen.png in Resources */,
 				48605E9A1C14798200302EE7 /* LaunchScreen.storyboard in Resources */,
 				48605E971C14798200302EE7 /* Assets.xcassets in Resources */,
 				48605E951C14798200302EE7 /* Main.storyboard in Resources */,

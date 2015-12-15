@@ -41,7 +41,6 @@ class JoinViewController: UIViewController , DataSendDelegate{
     // Connect to Server with the given Address and Port
     @IBAction func Verbinden_btn(sender: UIButton) {
         
-        if !TestingCondition{
         //Checking For Empty Address
         if !AddressInput.text!.isEmpty{
             
@@ -60,14 +59,14 @@ class JoinViewController: UIViewController , DataSendDelegate{
         }else{
             Status.text = "Bitte geben Server IP ein  "
             }
-        }else{
-            tcpConnect(Address: "192.168.1.103", Port: 8000 )
         }
- 
-    }
+
     
    
     
+    @IBAction func test(sender: UIButton) {
+        SegueToRemote.enabled = true
+    }
     
     //Function which deal to connect 
     func tcpConnect(Address addr: String, Port port:Int){

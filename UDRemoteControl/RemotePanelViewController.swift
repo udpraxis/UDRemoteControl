@@ -16,6 +16,7 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
     
     var timer = NSTimer()
     var startcommandisactive = false
+    var thisisfirsttime = true
    
     @IBOutlet weak var stopaction_btn: UIButton!
     @IBOutlet weak var startaction_btn: UIButton!
@@ -116,6 +117,7 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
         startaction_btn.hidden = false
         Acceleration_label.hidden = true
         Rotation_labe.hidden = true
+        thisisfirsttime = true
         
         Lengkung_btn.hidden = false
         Beschleunigen_btn.hidden = false
@@ -307,23 +309,19 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
     
     
     @IBAction func BeschleunigungPan(sender: UIPanGestureRecognizer) {
+        
         if Up_Down.hidden == false && Beschleunigen_btn.hidden == false{
             let translation = sender.translationInView(self.view)
             if let view  = sender.view{
+                
                 if(Beschleunigen_btn.center.y > 3.0) && (Beschleunigen_btn.center.y < 258.0 ) {
                     view.center = CGPoint(x: view.center.x , y: view.center.y + translation.y)
                     
-                }
-                
-                
-                // this part of the code is to avoid jamming the beschleuniger_btn when it reaches the critical point of the min and max edge
-                if(Beschleunigen_btn.center.y >= 258.0){
+                }else if(Beschleunigen_btn.center.y >= 258.0){
                     if(translation.y <= 0.0){
                         view.center = CGPoint(x: view.center.x, y: view.center.y + translation.y)
                     }
-                }
-                
-                if(Beschleunigen_btn.center.y <= 3.0){
+                }else if(Beschleunigen_btn.center.y <= 3.0){
                     if(translation.y >= 0.0){
                         view.center = CGPoint(x: view.center.x, y: view.center.y + translation.y)
                     }
@@ -337,14 +335,23 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
         }
         
         if istKonstantBeschleunigung.on == false{
+            //try to bring the button to center each time the first time
             //This will ensure the center of the btn is back to initial position a msg is also sent to the server
-            if sender.state == UIGestureRecognizerState.Ended{
+            if sender.state == UIGestureRecognizerState.Ended || thisisfirsttime == true{
+                
+                thisisfirsttime = false
                 
                 Beschleunigen_btn.center.y = Up_Down.bounds.height/2
+                
+                
+                
             }
+        }else {
+            thisisfirsttime = true
         }
         
     }
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "FromRemoteToSettting"{

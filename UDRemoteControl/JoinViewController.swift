@@ -108,6 +108,7 @@ class JoinViewController: UIViewController , DataSendDelegate{
     func dataSend(data:String){
         
         tcpClient.send(str: data)
+        print("sending")
     }
 }
 

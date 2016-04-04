@@ -26,7 +26,6 @@
 		48605EDF1C14870200302EE7 /* ysocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48605EDA1C14870200302EE7 /* ysocket.swift */; };
 		48AE9D361C15354A00D46DBF /* Documentation in Resources */ = {isa = PBXBuildFile; fileRef = 48AE9D351C15354A00D46DBF /* Documentation */; };
 		48D668741C163800008E5557 /* beschleuniger_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 48D668731C163800008E5557 /* beschleuniger_btn.png */; };
-		48D668761C163810008E5557 /* Lengkung.png in Resources */ = {isa = PBXBuildFile; fileRef = 48D668751C163810008E5557 /* Lengkung.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +72,6 @@
 		48605EDA1C14870200302EE7 /* ysocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ysocket.swift; path = "../../../Library/SwiftSocket-master/SwiftSocket/ysocket/ysocket.swift"; sourceTree = "<group>"; };
 		48AE9D351C15354A00D46DBF /* Documentation */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Documentation; sourceTree = "<group>"; };
 		48D668731C163800008E5557 /* beschleuniger_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = beschleuniger_btn.png; path = ../../../../Downloads/beschleuniger_btn.png; sourceTree = "<group>"; };
-		48D668751C163810008E5557 /* Lengkung.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Lengkung.png; path = ../../../../Downloads/Lengkung.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,7 +181,6 @@
 			isa = PBXGroup;
 			children = (
 				480B70691C1914A30061AEFB /* SplashScreen.png */,
-				48D668751C163810008E5557 /* Lengkung.png */,
 				48D668731C163800008E5557 /* beschleuniger_btn.png */,
 				48605E9B1C14798200302EE7 /* Info.plist */,
 				48605E981C14798200302EE7 /* LaunchScreen.storyboard */,
@@ -326,7 +323,6 @@
 				48605E971C14798200302EE7 /* Assets.xcassets in Resources */,
 				48605E951C14798200302EE7 /* Main.storyboard in Resources */,
 				48AE9D361C15354A00D46DBF /* Documentation in Resources */,
-				48D668761C163810008E5557 /* Lengkung.png in Resources */,
 				48D668741C163800008E5557 /* beschleuniger_btn.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

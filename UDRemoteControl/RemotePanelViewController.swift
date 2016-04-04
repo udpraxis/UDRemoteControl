@@ -14,6 +14,13 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
     var delegate : DataSendDelegate?
     var delegateRetrive : SettingDataRetrive?
     
+    //Forward button is present in left and right only present when gyro is on
+    @IBOutlet weak var Forward_right_btn: UIButton!
+    @IBOutlet weak var Forward_left_btn: UIButton!
+    @IBOutlet weak var Reverse_right_btn: UIButton!
+    @IBOutlet weak var Reverse_left_btn: UIButton!
+    
+    
     var timer = NSTimer()
     var startcommandisactive = false
     var thisisfirsttime = true
@@ -44,7 +51,9 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
     @IBOutlet weak var y_rota: UILabel!
     @IBOutlet weak var z_rota: UILabel!
     
-    
+    var ID:Int64 = 1
+    var pre_center_b:CGFloat = 0
+    var pre_center_l:CGFloat = 0
     
     @IBOutlet weak var Beschleunigen_btn: UIImageView!
     @IBOutlet weak var Lengkung_btn: UIImageView!
@@ -59,6 +68,8 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
     
     
     @IBAction func GyroOption(sender: UISwitch) {
+        
+        
         
         if sender.on{
             
@@ -107,7 +118,9 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
 
     }
     
-    
+    func Forward_gyro(){
+        
+    }
     
     //Reset Function to set the property to when gyro is not available
     func reset(){
@@ -118,6 +131,12 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
         Acceleration_label.hidden = true
         Rotation_labe.hidden = true
         thisisfirsttime = true
+        
+        //hid the the button for forwards and reverse in gyro
+        Forward_right_btn.hidden = true
+        Forward_left_btn.hidden = true
+        Reverse_left_btn.hidden = true
+        Reverse_right_btn.hidden = true
         
         Lengkung_btn.hidden = false
         Beschleunigen_btn.hidden = false
@@ -133,7 +152,7 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
         y_rota.text = ""
         z_rota.text = ""
         
-        
+        timer.invalidate()
         
         Beschleunigen_btn.center.y = Up_Down.bounds.height/2
         Lengkung_btn.center.x = Left_Right.bounds.width/2
@@ -164,7 +183,7 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
                 y_acce.text = String(y_acceleration)
                 z_acce.text = String(z_acceleration)
                 
-                tcpsendinfo(dataX: x_acceleration, dataY: y_acceleration, dataZ: z_acceleration)
+                tcpsendinfo(dataX: x_acceleration, dataY: y_acceleration)
                 
             }
         }
@@ -204,15 +223,19 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
         gyroupdateinterval = gyro_senstivitiy
     }
     
-    func tcpsendinfo(dataX dataX: Float,dataY:Float,dataZ:Float){
+    func tcpsendinfo(dataX dataX: Float,dataY:Float){
         
-        let s_datax = plusminussign(dataX);
-        let s_datay = plusminussign(dataY);
-        let s_dataz = plusminussign(dataZ);
+        let s_datax = plusminussign(dataX)
+        let s_datay = plusminussign(dataY)
+       
         
-        let accumulated_Data = "CM" + ":" + s_datax + ":" + s_datay + ":" + s_dataz
+        let accumulated_Data:String = "CM" + ":" + s_datax + ":" + s_datay
+        
+        //Adding ID functionally
+        let finaldata = accumulated_Data + "ID" + String(ID) + "@\n"
+        
         //This is where the Delegate to send data appear
-        delegate?.dataSend(accumulated_Data)
+        delegate?.dataSend(finaldata)
         
     }
     
@@ -253,6 +276,7 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
         motionManager.stopAccelerometerUpdates()
         motionManager.stopGyroUpdates()
         reset()
+        
         //Do not delete the above code
 
         
@@ -262,12 +286,7 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
         delegateRetrive?.activateDelegateCommunication()
     }
     
-    override func viewDidAppear(animated: Bool) {
-      
-    }
-    
     @IBAction func LengkungPan(sender: UIPanGestureRecognizer) {
-   
         //Why this Left_Righ(View) and the Lengkung_btn is checked because
         //deactivating the gyro will produce error
         if Left_Right.hidden == false && Lengkung_btn.hidden == false{
@@ -276,30 +295,21 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
                 if (Lengkung_btn.center.x > 3.0 )&&(Lengkung_btn.center.x < 258.0 ){
                     view.center = CGPoint(x: view.center.x + translation.x, y: view.center.y)
                 }
-                
                 //Avoid the possibile of jamming the button
                 if(Lengkung_btn.center.x >= 258.0){
                     if(translation.x <= 0.0){
                         view.center = CGPoint(x: view.center.x + translation.x, y: view.center.y)
                     }
                 }
-                
                 if(Lengkung_btn.center.x <= 3.0){
                     if(translation.x >= 0.0)
                     {
                         view.center = CGPoint(x: view.center.x + translation.x, y: view.center.y)
                     }
                 }
-                
-            
             }
-            
-            
                 sender.setTranslation(CGPointZero, inView: self.view)
-            
         }
-        
-     
         if sender.state == UIGestureRecognizerState.Ended{
             Lengkung_btn.center.x = Left_Right.bounds.width/2
         }
@@ -309,14 +319,11 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
     
     
     @IBAction func BeschleunigungPan(sender: UIPanGestureRecognizer) {
-        
         if Up_Down.hidden == false && Beschleunigen_btn.hidden == false{
             let translation = sender.translationInView(self.view)
             if let view  = sender.view{
-                
                 if(Beschleunigen_btn.center.y > 3.0) && (Beschleunigen_btn.center.y < 258.0 ) {
                     view.center = CGPoint(x: view.center.x , y: view.center.y + translation.y)
-                    
                 }else if(Beschleunigen_btn.center.y >= 258.0){
                     if(translation.y <= 0.0){
                         view.center = CGPoint(x: view.center.x, y: view.center.y + translation.y)
@@ -326,25 +333,15 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
                         view.center = CGPoint(x: view.center.x, y: view.center.y + translation.y)
                     }
                 }
-
             }
-            
-            
-    
             sender.setTranslation(CGPointZero, inView: self.view)
         }
-        
         if istKonstantBeschleunigung.on == false{
             //try to bring the button to center each time the first time
             //This will ensure the center of the btn is back to initial position a msg is also sent to the server
             if sender.state == UIGestureRecognizerState.Ended || thisisfirsttime == true{
-                
                 thisisfirsttime = false
-                
                 Beschleunigen_btn.center.y = Up_Down.bounds.height/2
-                
-                
-                
             }
         }else {
             thisisfirsttime = true
@@ -370,6 +367,8 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
         
     }
     
+    
+    
     @IBAction func Stop_Action(sender: UIButton) {
         
         timer.invalidate()
@@ -383,8 +382,9 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
     
     func dataManagerIfNonGyroDataIssend(){
         
-        let dataSpeed = String(258 - Int(Beschleunigen_btn.center.y))
-        let dataSteering = String(Int(Lengkung_btn.center.x))
+        let dataSpeed = String((260 - Int(Beschleunigen_btn.center.y))-130)
+        let dataSteering = String(Int(Lengkung_btn.center.x - 130))
+        
         
         
         let accumulatedData:String = "MC" + ":" + dataSpeed + ":" + dataSteering
@@ -392,7 +392,13 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
         print("This is the speed", dataSpeed)
         print("This is the Turning",dataSteering)
         
-        delegate?.dataSend(accumulatedData)
+        //Adding ID functionality
+        let finaldata:String = accumulatedData + ":ID" + String(ID) + "@\n"
+        
+        ID = ID + 1
+        
+    
+        delegate?.dataSend(finaldata)
     }
 }
 

@@ -10,6 +10,7 @@ import UIKit
 
 //This is the main part of the App. It deals with the connection and setting the protocol for the sending msg from the remote and retreving data
 
+
 class JoinViewController: UIViewController , DataSendDelegate{
     
     @IBOutlet weak var SegueToRemote: UIBarButtonItem!
@@ -59,7 +60,7 @@ class JoinViewController: UIViewController , DataSendDelegate{
         }else{
             Status.text = "Bitte geben Server IP ein  "
             }
-        }
+    }
 
     
    
@@ -111,7 +112,3 @@ class JoinViewController: UIViewController , DataSendDelegate{
         print("sending")
     }
 }
-
-
-
-

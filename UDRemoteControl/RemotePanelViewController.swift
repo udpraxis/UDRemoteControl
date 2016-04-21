@@ -232,7 +232,10 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
         let accumulated_Data:String = "CM" + ":" + s_datax + ":" + s_datay
         
         //Adding ID functionally
-        let finaldata = accumulated_Data + "ID" + String(ID) + "@\n"
+        //let finaldata = accumulated_Data + "ID" + String(ID) + "@\n"
+        let finaldata = "ID=" + String(ID) + ":" + accumulated_Data + "@\n"
+        
+        ID = ID + 1
         
         //This is where the Delegate to send data appear
         delegate?.dataSend(finaldata)
@@ -393,8 +396,8 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
         print("This is the Turning",dataSteering)
         
         //Adding ID functionality
-        let finaldata:String = accumulatedData + ":ID" + String(ID) + "@\n"
-        
+        //let finaldata:String = accumulatedData + ":ID" + String(ID) + "@\n"
+        let finaldata:String = "ID=" + String(ID) + ":" + accumulatedData + "@\n"
         ID = ID + 1
         
     

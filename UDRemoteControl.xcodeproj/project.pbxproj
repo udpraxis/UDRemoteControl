@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		480B706A1C1914A30061AEFB /* SplashScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 480B70691C1914A30061AEFB /* SplashScreen.png */; };
+		4824D2B21CCB840A007DF806 /* Source in Resources */ = {isa = PBXBuildFile; fileRef = 4824D2B11CCB840A007DF806 /* Source */; };
 		4847814E1C1779F0009AF0B8 /* ClientServerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847814D1C1779F0009AF0B8 /* ClientServerModel.swift */; };
 		48605E8E1C14798200302EE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48605E8D1C14798200302EE7 /* AppDelegate.swift */; };
 		48605E951C14798200302EE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48605E931C14798200302EE7 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		480B70691C1914A30061AEFB /* SplashScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SplashScreen.png; path = ../../../../Downloads/SplashScreen.png; sourceTree = "<group>"; };
+		4824D2B11CCB840A007DF806 /* Source */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Source; path = "../../../Library/Socket.IO-Client-Swift-master/Source"; sourceTree = "<group>"; };
 		4847814D1C1779F0009AF0B8 /* ClientServerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientServerModel.swift; sourceTree = "<group>"; };
 		48605E8A1C14798200302EE7 /* UDRemoteControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UDRemoteControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48605E8D1C14798200302EE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4824D2AE1CCB8346007DF806 /* SocketIO */ = {
+			isa = PBXGroup;
+			children = (
+				4824D2B11CCB840A007DF806 /* Source */,
+			);
+			name = SocketIO;
+			sourceTree = "<group>";
+		};
 		484781461C1761AA009AF0B8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +203,7 @@
 		48605ED41C1486BA00302EE7 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				4824D2AE1CCB8346007DF806 /* SocketIO */,
 				48605ED61C14870200302EE7 /* yudpsocket.swift */,
 				48605ED71C14870200302EE7 /* yudpsocket.c */,
 				48605ED81C14870200302EE7 /* ytcpsocket.swift */,
@@ -318,6 +329,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4824D2B21CCB840A007DF806 /* Source in Resources */,
 				480B706A1C1914A30061AEFB /* SplashScreen.png in Resources */,
 				48605E9A1C14798200302EE7 /* LaunchScreen.storyboard in Resources */,
 				48605E971C14798200302EE7 /* Assets.xcassets in Resources */,

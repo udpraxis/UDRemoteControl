@@ -233,7 +233,7 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
         
         //Adding ID functionally
         //let finaldata = accumulated_Data + "ID" + String(ID) + "@\n"
-        let finaldata = "ID=" + String(ID) + ":" + accumulated_Data + "@\n"
+        let finaldata = "ID=" + String(ID) + ":" + accumulated_Data + "\n"
         
         ID = ID + 1
         
@@ -366,7 +366,7 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
         startaction_btn.hidden = true
         stopaction_btn.hidden = false
         startcommandisactive = true
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "dataManagerIfNonGyroDataIssend", userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector:"dataManagerIfNonGyroDataIssend", userInfo: nil, repeats: true)
         
     }
     
@@ -397,7 +397,7 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
         
         //Adding ID functionality
         //let finaldata:String = accumulatedData + ":ID" + String(ID) + "@\n"
-        let finaldata:String = "ID=" + String(ID) + ":" + accumulatedData + "@\n"
+        let finaldata:String = "ID=" + String(ID) + ":" + accumulatedData + "\n"
         ID = ID + 1
         
     

@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		480B706A1C1914A30061AEFB /* SplashScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 480B70691C1914A30061AEFB /* SplashScreen.png */; };
-		4824D2B21CCB840A007DF806 /* Source in Resources */ = {isa = PBXBuildFile; fileRef = 4824D2B11CCB840A007DF806 /* Source */; };
-		4847814E1C1779F0009AF0B8 /* ClientServerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847814D1C1779F0009AF0B8 /* ClientServerModel.swift */; };
 		48605E8E1C14798200302EE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48605E8D1C14798200302EE7 /* AppDelegate.swift */; };
 		48605E951C14798200302EE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48605E931C14798200302EE7 /* Main.storyboard */; };
 		48605E971C14798200302EE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48605E961C14798200302EE7 /* Assets.xcassets */; };
@@ -48,8 +46,6 @@
 
 /* Begin PBXFileReference section */
 		480B70691C1914A30061AEFB /* SplashScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SplashScreen.png; path = ../../../../Downloads/SplashScreen.png; sourceTree = "<group>"; };
-		4824D2B11CCB840A007DF806 /* Source */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Source; path = "../../../Library/Socket.IO-Client-Swift-master/Source"; sourceTree = "<group>"; };
-		4847814D1C1779F0009AF0B8 /* ClientServerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientServerModel.swift; sourceTree = "<group>"; };
 		48605E8A1C14798200302EE7 /* UDRemoteControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UDRemoteControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48605E8D1C14798200302EE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48605E941C14798200302EE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -101,22 +97,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4824D2AE1CCB8346007DF806 /* SocketIO */ = {
-			isa = PBXGroup;
-			children = (
-				4824D2B11CCB840A007DF806 /* Source */,
-			);
-			name = SocketIO;
-			sourceTree = "<group>";
-		};
-		484781461C1761AA009AF0B8 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				4847814D1C1779F0009AF0B8 /* ClientServerModel.swift */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
 		48605E811C14798200302EE7 = {
 			isa = PBXGroup;
 			children = (
@@ -140,7 +120,6 @@
 		48605E8C1C14798200302EE7 /* UDRemoteControl */ = {
 			isa = PBXGroup;
 			children = (
-				484781461C1761AA009AF0B8 /* Model */,
 				48AE9D341C15352A00D46DBF /* Documentation */,
 				48605ED41C1486BA00302EE7 /* Libraries */,
 				48605EC11C1479D200302EE7 /* Supporting Files */,
@@ -203,10 +182,9 @@
 		48605ED41C1486BA00302EE7 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				4824D2AE1CCB8346007DF806 /* SocketIO */,
-				48605ED61C14870200302EE7 /* yudpsocket.swift */,
 				48605ED71C14870200302EE7 /* yudpsocket.c */,
 				48605ED81C14870200302EE7 /* ytcpsocket.swift */,
+				48605ED61C14870200302EE7 /* yudpsocket.swift */,
 				48605ED91C14870200302EE7 /* ytcpsocket.c */,
 				48605EDA1C14870200302EE7 /* ysocket.swift */,
 				48605ED51C14870200302EE7 /* UDRemoteControl-Bridging-Header.h */,
@@ -329,7 +307,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4824D2B21CCB840A007DF806 /* Source in Resources */,
 				480B706A1C1914A30061AEFB /* SplashScreen.png in Resources */,
 				48605E9A1C14798200302EE7 /* LaunchScreen.storyboard in Resources */,
 				48605E971C14798200302EE7 /* Assets.xcassets in Resources */,
@@ -367,7 +344,6 @@
 				48605ED11C147FEF00302EE7 /* DeviceViewController.swift in Sources */,
 				48605ECD1C147FC700302EE7 /* JoinViewController.swift in Sources */,
 				48605EDF1C14870200302EE7 /* ysocket.swift in Sources */,
-				4847814E1C1779F0009AF0B8 /* ClientServerModel.swift in Sources */,
 				48605E8E1C14798200302EE7 /* AppDelegate.swift in Sources */,
 				48605ED31C147FF900302EE7 /* SettingsViewController.swift in Sources */,
 				48605EDB1C14870200302EE7 /* yudpsocket.swift in Sources */,
@@ -461,7 +437,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -500,7 +476,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -593,7 +569,7 @@
 				48605EB31C14798200302EE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		48605EB41C14798200302EE7 /* Build configuration list for PBXNativeTarget "UDRemoteControl" */ = {
 			isa = XCConfigurationList;
@@ -602,7 +578,7 @@
 				48605EB61C14798200302EE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		48605EB71C14798200302EE7 /* Build configuration list for PBXNativeTarget "UDRemoteControlTests" */ = {
 			isa = XCConfigurationList;
@@ -611,7 +587,7 @@
 				48605EB91C14798200302EE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		48605EBA1C14798200302EE7 /* Build configuration list for PBXNativeTarget "UDRemoteControlUITests" */ = {
 			isa = XCConfigurationList;
@@ -620,7 +596,7 @@
 				48605EBC1C14798200302EE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

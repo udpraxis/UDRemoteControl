@@ -35,7 +35,7 @@ class JoinViewController: UIViewController , DataSendDelegate{
     
     //Disconnect to Server
     @IBAction func Disconnect_btn(sender: UIButton) {
-        
+        tcpDisconnect("close")
     }
     
     
@@ -62,6 +62,13 @@ class JoinViewController: UIViewController , DataSendDelegate{
             }
     }
 
+    func tcpDisconnect(action: String) {
+        tcpClient.send(str: action)
+        tcpClient.close()
+        Disconnect_btn.hidden = true
+        Verbinden_btn.hidden = false
+        SegueToRemote.enabled = false
+    }
     
    
     
@@ -74,7 +81,7 @@ class JoinViewController: UIViewController , DataSendDelegate{
         
         tcpClient = TCPClient(addr: addr, port: port)
         
-        var(success,errormsg) = tcpClient.connect(timeout: 1)
+        let(success,errormsg) = tcpClient.connect(timeout: 1)
         if success{
             print(errormsg)
             isConnected = true

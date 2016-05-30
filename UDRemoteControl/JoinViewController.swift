@@ -14,7 +14,6 @@ import UIKit
 class JoinViewController: UIViewController , DataSendDelegate{
     
     @IBOutlet weak var SegueToRemote: UIBarButtonItem!
-    
     var tcpClient = TCPClient()
     
     @IBOutlet weak var AddressInput: UITextField!

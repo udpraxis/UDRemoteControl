@@ -120,6 +120,7 @@
 		48605E8C1C14798200302EE7 /* UDRemoteControl */ = {
 			isa = PBXGroup;
 			children = (
+				48694F8F1CF7575C00FF7965 /* Model */,
 				48AE9D341C15352A00D46DBF /* Documentation */,
 				48605ED41C1486BA00302EE7 /* Libraries */,
 				48605EC11C1479D200302EE7 /* Supporting Files */,
@@ -190,6 +191,13 @@
 				48605ED51C14870200302EE7 /* UDRemoteControl-Bridging-Header.h */,
 			);
 			name = Libraries;
+			sourceTree = "<group>";
+		};
+		48694F8F1CF7575C00FF7965 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		48AE9D341C15352A00D46DBF /* Documentation */ = {

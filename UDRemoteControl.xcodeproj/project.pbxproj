@@ -17,7 +17,6 @@
 		48605EB01C14798200302EE7 /* UDRemoteControlUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48605EAF1C14798200302EE7 /* UDRemoteControlUITests.swift */; };
 		48605ECD1C147FC700302EE7 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48605ECC1C147FC700302EE7 /* JoinViewController.swift */; };
 		48605ECF1C147FE200302EE7 /* RemotePanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48605ECE1C147FE200302EE7 /* RemotePanelViewController.swift */; };
-		48605ED11C147FEF00302EE7 /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48605ED01C147FEF00302EE7 /* DeviceViewController.swift */; };
 		48605ED31C147FF900302EE7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48605ED21C147FF900302EE7 /* SettingsViewController.swift */; };
 		48605EDB1C14870200302EE7 /* yudpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48605ED61C14870200302EE7 /* yudpsocket.swift */; };
 		48605EDC1C14870200302EE7 /* yudpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 48605ED71C14870200302EE7 /* yudpsocket.c */; };
@@ -62,7 +61,6 @@
 		48605EB11C14798200302EE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48605ECC1C147FC700302EE7 /* JoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 		48605ECE1C147FE200302EE7 /* RemotePanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemotePanelViewController.swift; sourceTree = "<group>"; };
-		48605ED01C147FEF00302EE7 /* DeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
 		48605ED21C147FF900302EE7 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		48605ED51C14870200302EE7 /* UDRemoteControl-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UDRemoteControl-Bridging-Header.h"; sourceTree = "<group>"; };
 		48605ED61C14870200302EE7 /* yudpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = yudpsocket.swift; path = "../../../Library/SwiftSocket-master/SwiftSocket/ysocket/yudpsocket.swift"; sourceTree = "<group>"; };
@@ -163,7 +161,6 @@
 			children = (
 				48605ECC1C147FC700302EE7 /* JoinViewController.swift */,
 				48605ECE1C147FE200302EE7 /* RemotePanelViewController.swift */,
-				48605ED01C147FEF00302EE7 /* DeviceViewController.swift */,
 				48605ED21C147FF900302EE7 /* SettingsViewController.swift */,
 			);
 			name = Controller;
@@ -352,7 +349,6 @@
 				48605ECF1C147FE200302EE7 /* RemotePanelViewController.swift in Sources */,
 				48605EDD1C14870200302EE7 /* ytcpsocket.swift in Sources */,
 				48605EDE1C14870200302EE7 /* ytcpsocket.c in Sources */,
-				48605ED11C147FEF00302EE7 /* DeviceViewController.swift in Sources */,
 				48605ECD1C147FC700302EE7 /* JoinViewController.swift in Sources */,
 				48605EDF1C14870200302EE7 /* ysocket.swift in Sources */,
 				4847814E1C1779F0009AF0B8 /* ClientServerModel.swift in Sources */,

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2pa-SK-o3z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2pa-SK-o3z">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
@@ -85,6 +85,9 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                            <rect key="frame" x="122" y="60" width="68" height="24"/>
+                                        </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXK-Et-kyS">
                                         <rect key="frame" x="115" y="5" width="80" height="27"/>
@@ -191,11 +194,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Join Server" id="oj8-Cf-D1G">
                         <rightBarButtonItems>
-                            <barButtonItem title="Geräte" id="5V9-U1-f41">
-                                <connections>
-                                    <segue destination="0XY-c7-nGw" kind="show" identifier="FromJoinToDevice" id="Vc6-uM-sJs"/>
-                                </connections>
-                            </barButtonItem>
+                            <barButtonItem id="5V9-U1-f41"/>
                             <barButtonItem enabled="NO" title="Remote" id="w00-gY-n89">
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -217,25 +216,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1415.25" y="-320.25"/>
-        </scene>
-        <!--Geräte-->
-        <scene sceneID="mjI-n2-M3m">
-            <objects>
-                <viewController id="0XY-c7-nGw" customClass="DeviceViewController" customModule="UDRemoteControl" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="eIW-hG-onW"/>
-                        <viewControllerLayoutGuide type="bottom" id="4pu-N0-2XI"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="oq2-YA-8th">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.57176900255226726" green="1" blue="0.5848568242483978" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Geräte" id="4tY-qZ-bdg"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tEB-db-6zd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2127.75" y="-320.25"/>
         </scene>
         <!--Fernsteuerung-->
         <scene sceneID="wg7-f3-ORb">
@@ -917,7 +897,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1425" y="471.75"/>
+            <point key="canvasLocation" x="1415.25" y="436.5"/>
         </scene>
         <!--Einstellungen-->
         <scene sceneID="3Oo-3n-BRs">
@@ -1125,7 +1105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iWp-Ly-agd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2127.75" y="471.75"/>
+            <point key="canvasLocation" x="2097" y="436.5"/>
         </scene>
         <!--Verbinden-->
         <scene sceneID="dwg-dU-S4A">

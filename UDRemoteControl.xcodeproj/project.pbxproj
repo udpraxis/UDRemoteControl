@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		480B706A1C1914A30061AEFB /* SplashScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 480B70691C1914A30061AEFB /* SplashScreen.png */; };
-		4847814E1C1779F0009AF0B8 /* ClientServerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847814D1C1779F0009AF0B8 /* ClientServerModel.swift */; };
+		3F4006EA312922B85E55F9A5 /* Pods_UDRemoteControlUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD27D0F831A9B07010FFB09A /* Pods_UDRemoteControlUITests.framework */; };
 		48605E8E1C14798200302EE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48605E8D1C14798200302EE7 /* AppDelegate.swift */; };
 		48605E951C14798200302EE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48605E931C14798200302EE7 /* Main.storyboard */; };
 		48605E971C14798200302EE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48605E961C14798200302EE7 /* Assets.xcassets */; };
@@ -18,13 +17,14 @@
 		48605ECD1C147FC700302EE7 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48605ECC1C147FC700302EE7 /* JoinViewController.swift */; };
 		48605ECF1C147FE200302EE7 /* RemotePanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48605ECE1C147FE200302EE7 /* RemotePanelViewController.swift */; };
 		48605ED31C147FF900302EE7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48605ED21C147FF900302EE7 /* SettingsViewController.swift */; };
-		48605EDB1C14870200302EE7 /* yudpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48605ED61C14870200302EE7 /* yudpsocket.swift */; };
-		48605EDC1C14870200302EE7 /* yudpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 48605ED71C14870200302EE7 /* yudpsocket.c */; };
-		48605EDD1C14870200302EE7 /* ytcpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48605ED81C14870200302EE7 /* ytcpsocket.swift */; };
-		48605EDE1C14870200302EE7 /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 48605ED91C14870200302EE7 /* ytcpsocket.c */; };
-		48605EDF1C14870200302EE7 /* ysocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48605EDA1C14870200302EE7 /* ysocket.swift */; };
 		48AE9D361C15354A00D46DBF /* Documentation in Resources */ = {isa = PBXBuildFile; fileRef = 48AE9D351C15354A00D46DBF /* Documentation */; };
-		48D668741C163800008E5557 /* beschleuniger_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 48D668731C163800008E5557 /* beschleuniger_btn.png */; };
+		48CDBE581D4EDE3700010E30 /* CocoaMQTT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48CDBE571D4EDE3700010E30 /* CocoaMQTT.framework */; };
+		48CDBE5F1D4EE66200010E30 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48CDBE5D1D4EE66200010E30 /* CocoaAsyncSocket.framework */; };
+		48CDBE601D4EE66200010E30 /* MSWeakTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48CDBE5E1D4EE66200010E30 /* MSWeakTimer.framework */; };
+		48CDBE621D4EE81100010E30 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CDBE611D4EE81100010E30 /* Alert.swift */; };
+		48CDBE641D4EEB2300010E30 /* MqttClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CDBE631D4EEB2300010E30 /* MqttClient.swift */; };
+		48CDBE661D4EF02700010E30 /* UDDriveUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CDBE651D4EF02700010E30 /* UDDriveUserViewController.swift */; };
+		65971430ED899B8A008B0405 /* Pods_UDRemoteControlTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFCDDDD53B0D39821DC68D02 /* Pods_UDRemoteControlTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		480B70691C1914A30061AEFB /* SplashScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SplashScreen.png; path = ../../../../Downloads/SplashScreen.png; sourceTree = "<group>"; };
-		4847814D1C1779F0009AF0B8 /* ClientServerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientServerModel.swift; sourceTree = "<group>"; };
+		2C0F6C330C32AEF64E2ED87A /* Pods-UDRemoteControlUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UDRemoteControlUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UDRemoteControlUITests/Pods-UDRemoteControlUITests.release.xcconfig"; sourceTree = "<group>"; };
+		418BA6D846A2F3ADE7A0DF7F /* Pods-UDRemoteControlUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UDRemoteControlUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UDRemoteControlUITests/Pods-UDRemoteControlUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		48605E8A1C14798200302EE7 /* UDRemoteControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UDRemoteControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48605E8D1C14798200302EE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48605E941C14798200302EE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -63,13 +63,22 @@
 		48605ECE1C147FE200302EE7 /* RemotePanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemotePanelViewController.swift; sourceTree = "<group>"; };
 		48605ED21C147FF900302EE7 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		48605ED51C14870200302EE7 /* UDRemoteControl-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UDRemoteControl-Bridging-Header.h"; sourceTree = "<group>"; };
-		48605ED61C14870200302EE7 /* yudpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = yudpsocket.swift; path = "../../../Library/SwiftSocket-master/SwiftSocket/ysocket/yudpsocket.swift"; sourceTree = "<group>"; };
-		48605ED71C14870200302EE7 /* yudpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = yudpsocket.c; path = "../../../Library/SwiftSocket-master/SwiftSocket/ysocket/yudpsocket.c"; sourceTree = "<group>"; };
-		48605ED81C14870200302EE7 /* ytcpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ytcpsocket.swift; path = "../../../Library/SwiftSocket-master/SwiftSocket/ysocket/ytcpsocket.swift"; sourceTree = "<group>"; };
-		48605ED91C14870200302EE7 /* ytcpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ytcpsocket.c; path = "../../../Library/SwiftSocket-master/SwiftSocket/ysocket/ytcpsocket.c"; sourceTree = "<group>"; };
-		48605EDA1C14870200302EE7 /* ysocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ysocket.swift; path = "../../../Library/SwiftSocket-master/SwiftSocket/ysocket/ysocket.swift"; sourceTree = "<group>"; };
 		48AE9D351C15354A00D46DBF /* Documentation */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Documentation; sourceTree = "<group>"; };
-		48D668731C163800008E5557 /* beschleuniger_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = beschleuniger_btn.png; path = ../../../../Downloads/beschleuniger_btn.png; sourceTree = "<group>"; };
+		48CDBE571D4EDE3700010E30 /* CocoaMQTT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaMQTT.framework; path = "../../Library/Developer/Xcode/DerivedData/UDRemoteControl-dffbxiupezrmdagzxxbzxrjuowxn/Build/Products/Debug-iphonesimulator/CocoaMQTT/CocoaMQTT.framework"; sourceTree = "<group>"; };
+		48CDBE591D4EDE4300010E30 /* MSWeakTimer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MSWeakTimer.framework; path = "Pods/../build/Debug-iphoneos/MSWeakTimer/MSWeakTimer.framework"; sourceTree = "<group>"; };
+		48CDBE5B1D4EDE4F00010E30 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = "Pods/../build/Debug-iphoneos/CocoaAsyncSocket/CocoaAsyncSocket.framework"; sourceTree = "<group>"; };
+		48CDBE5D1D4EE66200010E30 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = "../../Library/Developer/Xcode/DerivedData/UDRemoteControl-dffbxiupezrmdagzxxbzxrjuowxn/Build/Products/Debug-iphonesimulator/CocoaAsyncSocket/CocoaAsyncSocket.framework"; sourceTree = "<group>"; };
+		48CDBE5E1D4EE66200010E30 /* MSWeakTimer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MSWeakTimer.framework; path = "../../Library/Developer/Xcode/DerivedData/UDRemoteControl-dffbxiupezrmdagzxxbzxrjuowxn/Build/Products/Debug-iphonesimulator/MSWeakTimer/MSWeakTimer.framework"; sourceTree = "<group>"; };
+		48CDBE611D4EE81100010E30 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		48CDBE631D4EEB2300010E30 /* MqttClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MqttClient.swift; sourceTree = "<group>"; };
+		48CDBE651D4EF02700010E30 /* UDDriveUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UDDriveUserViewController.swift; sourceTree = "<group>"; };
+		4A256AEE89AAF858D1D2E1E3 /* Pods-UDRemoteControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UDRemoteControl.release.xcconfig"; path = "Pods/Target Support Files/Pods-UDRemoteControl/Pods-UDRemoteControl.release.xcconfig"; sourceTree = "<group>"; };
+		55C5846E74F30586AE46C5DE /* Pods-UDRemoteControlTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UDRemoteControlTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UDRemoteControlTests/Pods-UDRemoteControlTests.debug.xcconfig"; sourceTree = "<group>"; };
+		564706C145BC80AA338AA4E8 /* Pods-UDRemoteControlTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UDRemoteControlTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UDRemoteControlTests/Pods-UDRemoteControlTests.release.xcconfig"; sourceTree = "<group>"; };
+		669F18D3A0F7FB21006674A7 /* Pods-UDRemoteControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UDRemoteControl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UDRemoteControl/Pods-UDRemoteControl.debug.xcconfig"; sourceTree = "<group>"; };
+		9C8EADE6FA282A6EBBC9E39A /* Pods_UDRemoteControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UDRemoteControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD27D0F831A9B07010FFB09A /* Pods_UDRemoteControlUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UDRemoteControlUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFCDDDD53B0D39821DC68D02 /* Pods_UDRemoteControlTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UDRemoteControlTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +86,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48CDBE5F1D4EE66200010E30 /* CocoaAsyncSocket.framework in Frameworks */,
+				48CDBE601D4EE66200010E30 /* MSWeakTimer.framework in Frameworks */,
+				48CDBE581D4EDE3700010E30 /* CocoaMQTT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65971430ED899B8A008B0405 /* Pods_UDRemoteControlTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,16 +104,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F4006EA312922B85E55F9A5 /* Pods_UDRemoteControlUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2EA1772E8478AB889AC042E5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				669F18D3A0F7FB21006674A7 /* Pods-UDRemoteControl.debug.xcconfig */,
+				4A256AEE89AAF858D1D2E1E3 /* Pods-UDRemoteControl.release.xcconfig */,
+				55C5846E74F30586AE46C5DE /* Pods-UDRemoteControlTests.debug.xcconfig */,
+				564706C145BC80AA338AA4E8 /* Pods-UDRemoteControlTests.release.xcconfig */,
+				418BA6D846A2F3ADE7A0DF7F /* Pods-UDRemoteControlUITests.debug.xcconfig */,
+				2C0F6C330C32AEF64E2ED87A /* Pods-UDRemoteControlUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		484781461C1761AA009AF0B8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4847814D1C1779F0009AF0B8 /* ClientServerModel.swift */,
+				48CDBE611D4EE81100010E30 /* Alert.swift */,
+				48CDBE631D4EEB2300010E30 /* MqttClient.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -112,6 +140,8 @@
 				48605EA31C14798200302EE7 /* UDRemoteControlTests */,
 				48605EAE1C14798200302EE7 /* UDRemoteControlUITests */,
 				48605E8B1C14798200302EE7 /* Products */,
+				2EA1772E8478AB889AC042E5 /* Pods */,
+				6D3971D279108D30C9E1AEEB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,6 +192,7 @@
 				48605ECC1C147FC700302EE7 /* JoinViewController.swift */,
 				48605ECE1C147FE200302EE7 /* RemotePanelViewController.swift */,
 				48605ED21C147FF900302EE7 /* SettingsViewController.swift */,
+				48CDBE651D4EF02700010E30 /* UDDriveUserViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -177,8 +208,6 @@
 		48605EC11C1479D200302EE7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				480B70691C1914A30061AEFB /* SplashScreen.png */,
-				48D668731C163800008E5557 /* beschleuniger_btn.png */,
 				48605E9B1C14798200302EE7 /* Info.plist */,
 				48605E981C14798200302EE7 /* LaunchScreen.storyboard */,
 				48605E8D1C14798200302EE7 /* AppDelegate.swift */,
@@ -190,11 +219,6 @@
 		48605ED41C1486BA00302EE7 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				48605ED61C14870200302EE7 /* yudpsocket.swift */,
-				48605ED71C14870200302EE7 /* yudpsocket.c */,
-				48605ED81C14870200302EE7 /* ytcpsocket.swift */,
-				48605ED91C14870200302EE7 /* ytcpsocket.c */,
-				48605EDA1C14870200302EE7 /* ysocket.swift */,
 				48605ED51C14870200302EE7 /* UDRemoteControl-Bridging-Header.h */,
 			);
 			name = Libraries;
@@ -208,6 +232,21 @@
 			name = Documentation;
 			sourceTree = "<group>";
 		};
+		6D3971D279108D30C9E1AEEB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				48CDBE5D1D4EE66200010E30 /* CocoaAsyncSocket.framework */,
+				48CDBE5E1D4EE66200010E30 /* MSWeakTimer.framework */,
+				48CDBE5B1D4EDE4F00010E30 /* CocoaAsyncSocket.framework */,
+				48CDBE591D4EDE4300010E30 /* MSWeakTimer.framework */,
+				48CDBE571D4EDE3700010E30 /* CocoaMQTT.framework */,
+				9C8EADE6FA282A6EBBC9E39A /* Pods_UDRemoteControl.framework */,
+				DFCDDDD53B0D39821DC68D02 /* Pods_UDRemoteControlTests.framework */,
+				BD27D0F831A9B07010FFB09A /* Pods_UDRemoteControlUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -215,9 +254,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48605EB41C14798200302EE7 /* Build configuration list for PBXNativeTarget "UDRemoteControl" */;
 			buildPhases = (
+				6AC5909294907101C12183FE /* 📦 Check Pods Manifest.lock */,
 				48605E861C14798200302EE7 /* Sources */,
 				48605E871C14798200302EE7 /* Frameworks */,
 				48605E881C14798200302EE7 /* Resources */,
+				9DC679899B55ACF9FD644B32 /* 📦 Embed Pods Frameworks */,
+				99DA8354E16A658711A4CE04 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -232,9 +274,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48605EB71C14798200302EE7 /* Build configuration list for PBXNativeTarget "UDRemoteControlTests" */;
 			buildPhases = (
+				BC79B626313BEED871E48C70 /* 📦 Check Pods Manifest.lock */,
 				48605E9C1C14798200302EE7 /* Sources */,
 				48605E9D1C14798200302EE7 /* Frameworks */,
 				48605E9E1C14798200302EE7 /* Resources */,
+				CD6D2759CFB38649D44B5726 /* 📦 Embed Pods Frameworks */,
+				05FD6FA895E2EFA7ACBF0628 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,9 +295,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48605EBA1C14798200302EE7 /* Build configuration list for PBXNativeTarget "UDRemoteControlUITests" */;
 			buildPhases = (
+				8E148078E7926554A6A006B7 /* 📦 Check Pods Manifest.lock */,
 				48605EA71C14798200302EE7 /* Sources */,
 				48605EA81C14798200302EE7 /* Frameworks */,
 				48605EA91C14798200302EE7 /* Resources */,
+				940BD8D33C2A4498C50EBE48 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -315,12 +362,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				480B706A1C1914A30061AEFB /* SplashScreen.png in Resources */,
 				48605E9A1C14798200302EE7 /* LaunchScreen.storyboard in Resources */,
 				48605E971C14798200302EE7 /* Assets.xcassets in Resources */,
 				48605E951C14798200302EE7 /* Main.storyboard in Resources */,
 				48AE9D361C15354A00D46DBF /* Documentation in Resources */,
-				48D668741C163800008E5557 /* beschleuniger_btn.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,21 +385,141 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		05FD6FA895E2EFA7ACBF0628 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UDRemoteControlTests/Pods-UDRemoteControlTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6AC5909294907101C12183FE /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8E148078E7926554A6A006B7 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		940BD8D33C2A4498C50EBE48 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UDRemoteControlUITests/Pods-UDRemoteControlUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99DA8354E16A658711A4CE04 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UDRemoteControl/Pods-UDRemoteControl-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9DC679899B55ACF9FD644B32 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UDRemoteControl/Pods-UDRemoteControl-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC79B626313BEED871E48C70 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CD6D2759CFB38649D44B5726 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UDRemoteControlTests/Pods-UDRemoteControlTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		48605E861C14798200302EE7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48605EDC1C14870200302EE7 /* yudpsocket.c in Sources */,
 				48605ECF1C147FE200302EE7 /* RemotePanelViewController.swift in Sources */,
-				48605EDD1C14870200302EE7 /* ytcpsocket.swift in Sources */,
-				48605EDE1C14870200302EE7 /* ytcpsocket.c in Sources */,
 				48605ECD1C147FC700302EE7 /* JoinViewController.swift in Sources */,
-				48605EDF1C14870200302EE7 /* ysocket.swift in Sources */,
-				4847814E1C1779F0009AF0B8 /* ClientServerModel.swift in Sources */,
+				48CDBE641D4EEB2300010E30 /* MqttClient.swift in Sources */,
 				48605E8E1C14798200302EE7 /* AppDelegate.swift in Sources */,
+				48CDBE661D4EF02700010E30 /* UDDriveUserViewController.swift in Sources */,
+				48CDBE621D4EE81100010E30 /* Alert.swift in Sources */,
 				48605ED31C147FF900302EE7 /* SettingsViewController.swift in Sources */,
-				48605EDB1C14870200302EE7 /* yudpsocket.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,33 +659,48 @@
 		};
 		48605EB51C14798200302EE7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 669F18D3A0F7FB21006674A7 /* Pods-UDRemoteControl.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/MSWeakTimer",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/CocoaAsyncSocket",
+				);
 				INFOPLIST_FILE = UDRemoteControl/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = UDlab.Praxis.UDRemoteControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "UDRemoteControl/UDRemoteControl-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
 		48605EB61C14798200302EE7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A256AEE89AAF858D1D2E1E3 /* Pods-UDRemoteControl.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/MSWeakTimer",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/CocoaAsyncSocket",
+				);
 				INFOPLIST_FILE = UDRemoteControl/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = UDlab.Praxis.UDRemoteControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "UDRemoteControl/UDRemoteControl-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
 		48605EB81C14798200302EE7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55C5846E74F30586AE46C5DE /* Pods-UDRemoteControlTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = UDRemoteControlTests/Info.plist;
@@ -533,6 +713,7 @@
 		};
 		48605EB91C14798200302EE7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 564706C145BC80AA338AA4E8 /* Pods-UDRemoteControlTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = UDRemoteControlTests/Info.plist;
@@ -545,6 +726,7 @@
 		};
 		48605EBB1C14798200302EE7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 418BA6D846A2F3ADE7A0DF7F /* Pods-UDRemoteControlUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = UDRemoteControlUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -557,6 +739,7 @@
 		};
 		48605EBC1C14798200302EE7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C0F6C330C32AEF64E2ED87A /* Pods-UDRemoteControlUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = UDRemoteControlUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

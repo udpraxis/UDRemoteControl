@@ -33,8 +33,6 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
     
     @IBOutlet weak var Gyro_Manual: UISwitch!
     
-    @IBOutlet weak var Acceleration_label: UILabel!
-    @IBOutlet weak var Rotation_labe: UILabel!
     
     //Useful to send a constant data about the vorward speed negleting all the gyro and hand gesture
     @IBOutlet weak var istKonstantBeschleunigung: UISwitch!
@@ -85,8 +83,7 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
             Up_Down.hidden = true
             Left_Right.hidden = true
         
-            Acceleration_label.hidden = false
-            Rotation_labe.hidden = false
+            
             
             //Getting the Time interval for the update
             motionManager.accelerometerUpdateInterval = gyroupdateinterval
@@ -128,8 +125,6 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
         motionManager.stopAccelerometerUpdates()
         motionManager.stopGyroUpdates()
         startaction_btn.hidden = false
-        Acceleration_label.hidden = true
-        Rotation_labe.hidden = true
         thisisfirsttime = true
         
         //hid the the button for forwards and reverse in gyro
@@ -262,10 +257,11 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
     // ensure the number of byte is always very useful if eg 0.120 is the value
     // then the last zero will be omitted by the compiler so to avoid error in arduino side "0" 
     // is replaces with "0"
-    func checkdata(var s_data:String) -> String{
+    func checkdata(s_data:String) -> String{
+        var data = s_data
         if(s_data.characters.count < 6){
             repeat{
-                s_data.insert("1", atIndex: s_data.endIndex)
+                data.insert("1", atIndex: s_data.endIndex)
             }while s_data.characters.count < 6
         }
         return s_data
@@ -366,7 +362,7 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
         startaction_btn.hidden = true
         stopaction_btn.hidden = false
         startcommandisactive = true
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "dataManagerIfNonGyroDataIssend", userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(RemotePanelViewController.dataManagerIfNonGyroDataIssend), userInfo: nil, repeats: true)
         
     }
     

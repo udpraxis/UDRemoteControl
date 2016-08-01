@@ -4,6 +4,14 @@ There is 4 source code
 
 joinView Controller
 RemotePanelViewController
-DeviceViewController
 SettingViewController
+
+
+
+Updates planned in 1st of August
+
+- implementing Mqtt client based app moving away from the precvious TCP Connection based client
+- sending the message succesfully to Mqtt server
+- implementing username and passwords for mqtt server
+
 

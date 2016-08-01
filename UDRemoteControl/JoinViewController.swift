@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CocoaMQTT
 
 //This is the main part of the App. It deals with the connection and setting the protocol for the sending msg from the remote and retreving data
 

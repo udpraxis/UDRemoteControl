@@ -22,8 +22,8 @@
 		48CDBE5F1D4EE66200010E30 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48CDBE5D1D4EE66200010E30 /* CocoaAsyncSocket.framework */; };
 		48CDBE601D4EE66200010E30 /* MSWeakTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48CDBE5E1D4EE66200010E30 /* MSWeakTimer.framework */; };
 		48CDBE621D4EE81100010E30 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CDBE611D4EE81100010E30 /* Alert.swift */; };
-		48CDBE641D4EEB2300010E30 /* MqttClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CDBE631D4EEB2300010E30 /* MqttClient.swift */; };
-		48CDBE661D4EF02700010E30 /* UDDriveUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CDBE651D4EF02700010E30 /* UDDriveUserViewController.swift */; };
+		48CDBE6A1D4F337600010E30 /* CreateUDDriverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CDBE691D4F337600010E30 /* CreateUDDriverViewController.swift */; };
+		48CDBE6E1D4F33E200010E30 /* UDdriverUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CDBE6D1D4F33E200010E30 /* UDdriverUserViewController.swift */; };
 		65971430ED899B8A008B0405 /* Pods_UDRemoteControlTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFCDDDD53B0D39821DC68D02 /* Pods_UDRemoteControlTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,8 +70,8 @@
 		48CDBE5D1D4EE66200010E30 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = "../../Library/Developer/Xcode/DerivedData/UDRemoteControl-dffbxiupezrmdagzxxbzxrjuowxn/Build/Products/Debug-iphonesimulator/CocoaAsyncSocket/CocoaAsyncSocket.framework"; sourceTree = "<group>"; };
 		48CDBE5E1D4EE66200010E30 /* MSWeakTimer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MSWeakTimer.framework; path = "../../Library/Developer/Xcode/DerivedData/UDRemoteControl-dffbxiupezrmdagzxxbzxrjuowxn/Build/Products/Debug-iphonesimulator/MSWeakTimer/MSWeakTimer.framework"; sourceTree = "<group>"; };
 		48CDBE611D4EE81100010E30 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
-		48CDBE631D4EEB2300010E30 /* MqttClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MqttClient.swift; sourceTree = "<group>"; };
-		48CDBE651D4EF02700010E30 /* UDDriveUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UDDriveUserViewController.swift; sourceTree = "<group>"; };
+		48CDBE691D4F337600010E30 /* CreateUDDriverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUDDriverViewController.swift; sourceTree = "<group>"; };
+		48CDBE6D1D4F33E200010E30 /* UDdriverUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UDdriverUserViewController.swift; sourceTree = "<group>"; };
 		4A256AEE89AAF858D1D2E1E3 /* Pods-UDRemoteControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UDRemoteControl.release.xcconfig"; path = "Pods/Target Support Files/Pods-UDRemoteControl/Pods-UDRemoteControl.release.xcconfig"; sourceTree = "<group>"; };
 		55C5846E74F30586AE46C5DE /* Pods-UDRemoteControlTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UDRemoteControlTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UDRemoteControlTests/Pods-UDRemoteControlTests.debug.xcconfig"; sourceTree = "<group>"; };
 		564706C145BC80AA338AA4E8 /* Pods-UDRemoteControlTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UDRemoteControlTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UDRemoteControlTests/Pods-UDRemoteControlTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -128,7 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				48CDBE611D4EE81100010E30 /* Alert.swift */,
-				48CDBE631D4EEB2300010E30 /* MqttClient.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -192,7 +191,8 @@
 				48605ECC1C147FC700302EE7 /* JoinViewController.swift */,
 				48605ECE1C147FE200302EE7 /* RemotePanelViewController.swift */,
 				48605ED21C147FF900302EE7 /* SettingsViewController.swift */,
-				48CDBE651D4EF02700010E30 /* UDDriveUserViewController.swift */,
+				48CDBE691D4F337600010E30 /* CreateUDDriverViewController.swift */,
+				48CDBE6D1D4F33E200010E30 /* UDdriverUserViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -513,11 +513,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48CDBE6E1D4F33E200010E30 /* UDdriverUserViewController.swift in Sources */,
 				48605ECF1C147FE200302EE7 /* RemotePanelViewController.swift in Sources */,
+				48CDBE6A1D4F337600010E30 /* CreateUDDriverViewController.swift in Sources */,
 				48605ECD1C147FC700302EE7 /* JoinViewController.swift in Sources */,
-				48CDBE641D4EEB2300010E30 /* MqttClient.swift in Sources */,
 				48605E8E1C14798200302EE7 /* AppDelegate.swift in Sources */,
-				48CDBE661D4EF02700010E30 /* UDDriveUserViewController.swift in Sources */,
 				48CDBE621D4EE81100010E30 /* Alert.swift in Sources */,
 				48605ED31C147FF900302EE7 /* SettingsViewController.swift in Sources */,
 			);

@@ -12,11 +12,44 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    
+    //KEY Constant for userDefaults
+    let driverNameKey = "driverName"
+    let AnonymousOption = "anonymous"
+    let qos = "qos"
+    let password = "password"
+    let lastIp = "Ip"
+    let lastPort = "port"
+    let gyroSensitivity = "gyroSens"
+    let gyroAccelerate = "gyroacc"
+    let gyroSteer = "gyroturn"
+    
+
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        let storyBoard:UIStoryboard = UIStoryboard.init(name: "Main", bundle: NSBundle.mainBundle())
+        
+        if ((userDefaults.valueForKey(driverNameKey)?.empty) != nil){
+            let secondViewController:UIViewController = storyBoard.instantiateViewControllerWithIdentifier("UserDetails")
+            self.window?.rootViewController = secondViewController
+        }else{
+            let loginViewController:UIViewController = storyBoard.instantiateViewControllerWithIdentifier("CreateUser")
+            self.window?.rootViewController = loginViewController
+            firstTime()
+            
+        }
         return true
+    }
+    
+    func firstTime(){
+        userDefaults.setInteger(75, forKey: gyroSensitivity)
+        userDefaults.setBool(true, forKey: gyroSteer)
+        userDefaults.setBool(true, forKey: gyroAccelerate)
+        
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -40,6 +73,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+
 
 
 }

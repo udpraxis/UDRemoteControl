@@ -124,7 +124,7 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
         
         motionManager.stopAccelerometerUpdates()
         motionManager.stopGyroUpdates()
-        startaction_btn.hidden = false
+        //startaction_btn.hidden = false
         thisisfirsttime = true
         
         //hid the the button for forwards and reverse in gyro

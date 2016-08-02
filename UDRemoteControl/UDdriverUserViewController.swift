@@ -10,10 +10,30 @@ import UIKit
 
 class UDdriverUserViewController: UIViewController {
 
+    let userDefault = NSUserDefaults.standardUserDefaults()
+    
+    @IBOutlet weak var driverNameLabel: UILabel!
+    @IBOutlet weak var anonymousLabel: UILabel!
+    @IBOutlet weak var qosLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        driverNameLabel.text = userDefault.valueForKey(DefaultKey.UserName.rawValue) as? String
+        if let anonymous:Bool =  userDefault.boolForKey(DefaultKey.AnonymouseOption.rawValue){
+            if(anonymous){
+                anonymousLabel.text = "Username or password is required for the Mqtt server"
+            }else{
+                anonymousLabel.text = "No username or password is required for the Mqtt server"
 
-        // Do any additional setup after loading the view.
+            }
+            
+            if let qosInt:Int = userDefault.integerForKey(DefaultKey.QOS.rawValue){
+                qosLabel.text = String(qosInt)
+            }
+                
+            
+        
+        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -10,17 +10,6 @@ import UIKit
 
 class CreateUDDriverViewController: UIViewController {
     
-    
-    let driverNameKey = "driverName"
-    let AnonymousOption = "anonymous"
-    let qos = "qos"
-    let password = "password"
-    let lastIp = "Ip"
-    let lastPort = "port"
-    let gyroSensitivity = "gyroSens"
-    let gyroAccelerate = "gyroacc"
-    let gyroSteer = "gyroturn"
-    
     let toJoinSegue:String = "FromUserCreateToJoin"
     
     let userDefault = NSUserDefaults.standardUserDefaults()
@@ -49,14 +38,14 @@ class CreateUDDriverViewController: UIViewController {
     //repeated view check funtions
     func udViewChange() {
         
-        if let drivername = userDefault.valueForKey(driverNameKey){
+        if let drivername = userDefault.valueForKey(DefaultKey.UserName.rawValue){
             mqttClientLabel.text = drivername as? String
             
             driverNameTextView.text = drivername as? String
             
             
             // making View Mqtt Config hidden or appear
-            let onOff = userDefault.boolForKey(AnonymousOption)
+            let onOff = userDefault.boolForKey(DefaultKey.AnonymouseOption.rawValue)
             
             if(onOff){
                 mqttConfig.hidden = false
@@ -66,7 +55,7 @@ class CreateUDDriverViewController: UIViewController {
                 anonymousOption.setOn(false, animated: true)
             }
             
-            qosChoice.selectedSegmentIndex = userDefault.integerForKey(qos)
+            qosChoice.selectedSegmentIndex = userDefault.integerForKey(DefaultKey.QOS.rawValue)
         }else{
             driverNameTextView.placeholder = "Neue Benutzer erstellen"
             mqttClientLabel.text = "Bitte neue Benutzer erstellen"
@@ -75,36 +64,28 @@ class CreateUDDriverViewController: UIViewController {
 
     }
     
-    
-    func test() {
-        print(userDefault.valueForKey(driverNameKey))
-        print(userDefault.valueForKey(gyroSensitivity))
-        print(userDefault.valueForKey(gyroSteer))
-        print(userDefault.valueForKey(gyroAccelerate))
-    }
-    
     func checkForValueChanges(){
-        if(((!(driverNameTextView.text?.isEmpty)! && !driverNameTextView.text!.containsString(userDefault.valueForKey(driverNameKey) as! String)))){
-            userDefault.setValue(driverNameTextView.text, forKey: driverNameKey)
+        if(((!(driverNameTextView.text?.isEmpty)! && !driverNameTextView.text!.containsString(userDefault.valueForKey(DefaultKey.UserName.rawValue) as! String)))){
+            userDefault.setValue(driverNameTextView.text, forKey: DefaultKey.UserName.rawValue)
             isChangesMade = true
             print("driver name is changed")
         }
-        if(anonymousOption.on != userDefault.boolForKey(AnonymousOption)){
-            userDefault.setBool(anonymousOption.on, forKey: AnonymousOption)
+        if(anonymousOption.on != userDefault.boolForKey(DefaultKey.AnonymouseOption.rawValue)){
+            userDefault.setBool(anonymousOption.on, forKey: DefaultKey.AnonymouseOption.rawValue)
             isChangesMade = true
             print("anonymousoption is changed")
         }
         
-        if(qosChoice.selectedSegmentIndex != userDefault.integerForKey(qos)){
-            userDefault.setInteger(qosChoice.selectedSegmentIndex, forKey: qos)
+        if(qosChoice.selectedSegmentIndex != userDefault.integerForKey(DefaultKey.QOS.rawValue)){
+            userDefault.setInteger(qosChoice.selectedSegmentIndex, forKey: DefaultKey.QOS.rawValue)
             isChangesMade = true
             print("QOS is changed")
         }
 
         
         if(anonymousOption.on){
-            if(!passwordTextView.text!.containsString(userDefault.valueForKey(password) as! String)){
-                userDefault.setValue(passwordTextView.text, forKey: password)
+            if(!passwordTextView.text!.containsString(userDefault.valueForKey(DefaultKey.Password.rawValue) as! String)){
+                userDefault.setValue(passwordTextView.text, forKey: DefaultKey.Password.rawValue)
                 print("password is changed")
             }
         }
@@ -134,7 +115,7 @@ class CreateUDDriverViewController: UIViewController {
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
         
         if(driverNameTextView.text!.isEmpty){
-            if(userDefault.valueForKey(driverNameKey)?.empty != nil){
+            if(userDefault.valueForKey(DefaultKey.UserName.rawValue)?.empty != nil){
                 Alert.show("Kein Benutzer", message: "Bitte ein Benutzer erstellen", vc: self)
                 return false
             }

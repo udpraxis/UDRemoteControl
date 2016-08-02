@@ -14,18 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     let userDefaults = NSUserDefaults.standardUserDefaults()
-    
-    //KEY Constant for userDefaults
-    let driverNameKey = "driverName"
-    let AnonymousOption = "anonymous"
-    let qos = "qos"
-    let password = "password"
-    let lastIp = "Ip"
-    let lastPort = "port"
-    let gyroSensitivity = "gyroSens"
-    let gyroAccelerate = "gyroacc"
-    let gyroSteer = "gyroturn"
-    
+
 
 
 
@@ -33,22 +22,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         let storyBoard:UIStoryboard = UIStoryboard.init(name: "Main", bundle: NSBundle.mainBundle())
         
-        if ((userDefaults.valueForKey(driverNameKey)?.empty) != nil){
-            let secondViewController:UIViewController = storyBoard.instantiateViewControllerWithIdentifier("UserDetails")
-            self.window?.rootViewController = secondViewController
-        }else{
+        if ((userDefaults.valueForKey(DefaultKey.UserName.rawValue)?.empty) != nil){
             let loginViewController:UIViewController = storyBoard.instantiateViewControllerWithIdentifier("CreateUser")
             self.window?.rootViewController = loginViewController
             firstTime()
-            
+            }else{
+            let secondViewController:UIViewController = storyBoard.instantiateViewControllerWithIdentifier("UserDetails")
+            self.window?.rootViewController = secondViewController
+
         }
         return true
     }
     
     func firstTime(){
-        userDefaults.setInteger(75, forKey: gyroSensitivity)
-        userDefaults.setBool(true, forKey: gyroSteer)
-        userDefaults.setBool(true, forKey: gyroAccelerate)
+        userDefaults.setInteger(75, forKey: DefaultKey.GyroSensitivitySetting.rawValue)
+        userDefaults.setBool(true, forKey: DefaultKey.GyroSteerSetting.rawValue)
+        userDefaults.setBool(true, forKey: DefaultKey.GyroAccelerateSetting.rawValue)
+        userDefaults.setBool(false, forKey: DefaultKey.ISCONNECTED.rawValue)
+        userDefaults.setBool(false, forKey: DefaultKey.ClientExist.rawValue)
         
     }
 

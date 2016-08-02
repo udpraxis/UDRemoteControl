@@ -17,7 +17,9 @@
 		48605ECD1C147FC700302EE7 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48605ECC1C147FC700302EE7 /* JoinViewController.swift */; };
 		48605ECF1C147FE200302EE7 /* RemotePanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48605ECE1C147FE200302EE7 /* RemotePanelViewController.swift */; };
 		48605ED31C147FF900302EE7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48605ED21C147FF900302EE7 /* SettingsViewController.swift */; };
+		48A3D23F1D50AEA700D1EEB2 /* DefaultEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A3D23E1D50AEA700D1EEB2 /* DefaultEnum.swift */; };
 		48AE9D361C15354A00D46DBF /* Documentation in Resources */ = {isa = PBXBuildFile; fileRef = 48AE9D351C15354A00D46DBF /* Documentation */; };
+		48BFDCB41D4F87FB0060372A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BFDCB31D4F87FB0060372A /* Message.swift */; };
 		48CDBE581D4EDE3700010E30 /* CocoaMQTT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48CDBE571D4EDE3700010E30 /* CocoaMQTT.framework */; };
 		48CDBE5F1D4EE66200010E30 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48CDBE5D1D4EE66200010E30 /* CocoaAsyncSocket.framework */; };
 		48CDBE601D4EE66200010E30 /* MSWeakTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48CDBE5E1D4EE66200010E30 /* MSWeakTimer.framework */; };
@@ -63,7 +65,9 @@
 		48605ECE1C147FE200302EE7 /* RemotePanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemotePanelViewController.swift; sourceTree = "<group>"; };
 		48605ED21C147FF900302EE7 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		48605ED51C14870200302EE7 /* UDRemoteControl-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UDRemoteControl-Bridging-Header.h"; sourceTree = "<group>"; };
+		48A3D23E1D50AEA700D1EEB2 /* DefaultEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultEnum.swift; sourceTree = "<group>"; };
 		48AE9D351C15354A00D46DBF /* Documentation */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Documentation; sourceTree = "<group>"; };
+		48BFDCB31D4F87FB0060372A /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		48CDBE571D4EDE3700010E30 /* CocoaMQTT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaMQTT.framework; path = "../../Library/Developer/Xcode/DerivedData/UDRemoteControl-dffbxiupezrmdagzxxbzxrjuowxn/Build/Products/Debug-iphonesimulator/CocoaMQTT/CocoaMQTT.framework"; sourceTree = "<group>"; };
 		48CDBE591D4EDE4300010E30 /* MSWeakTimer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MSWeakTimer.framework; path = "Pods/../build/Debug-iphoneos/MSWeakTimer/MSWeakTimer.framework"; sourceTree = "<group>"; };
 		48CDBE5B1D4EDE4F00010E30 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = "Pods/../build/Debug-iphoneos/CocoaAsyncSocket/CocoaAsyncSocket.framework"; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				48CDBE611D4EE81100010E30 /* Alert.swift */,
+				48BFDCB31D4F87FB0060372A /* Message.swift */,
+				48A3D23E1D50AEA700D1EEB2 /* DefaultEnum.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -517,7 +523,9 @@
 				48605ECF1C147FE200302EE7 /* RemotePanelViewController.swift in Sources */,
 				48CDBE6A1D4F337600010E30 /* CreateUDDriverViewController.swift in Sources */,
 				48605ECD1C147FC700302EE7 /* JoinViewController.swift in Sources */,
+				48A3D23F1D50AEA700D1EEB2 /* DefaultEnum.swift in Sources */,
 				48605E8E1C14798200302EE7 /* AppDelegate.swift in Sources */,
+				48BFDCB41D4F87FB0060372A /* Message.swift in Sources */,
 				48CDBE621D4EE81100010E30 /* Alert.swift in Sources */,
 				48605ED31C147FF900302EE7 /* SettingsViewController.swift in Sources */,
 			);

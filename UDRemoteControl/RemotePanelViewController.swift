@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreMotion
+import CocoaMQTT
 
 class RemotePanelViewController: UIViewController, SettingDelegates{
     
@@ -15,44 +16,19 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
     var delegateRetrive : SettingDataRetrive?
     
     //Forward button is present in left and right only present when gyro is on
-    @IBOutlet weak var Forward_right_btn: UIButton!
-    @IBOutlet weak var Forward_left_btn: UIButton!
     @IBOutlet weak var Reverse_right_btn: UIButton!
     @IBOutlet weak var Reverse_left_btn: UIButton!
-    
-    
-    var timer = NSTimer()
-    var startcommandisactive = false
-    var thisisfirsttime = true
-   
-    @IBOutlet weak var stopaction_btn: UIButton!
-    @IBOutlet weak var startaction_btn: UIButton!
-    
-    //Motion manager
-    var motionManager = CMMotionManager()
-    
+    @IBOutlet weak var geschwindigketLabel: UILabel!
+    @IBOutlet weak var startStopBtn: UIButton!
+
     @IBOutlet weak var Gyro_Manual: UISwitch!
-    
-    
+
     //Useful to send a constant data about the vorward speed negleting all the gyro and hand gesture
     @IBOutlet weak var istKonstantBeschleunigung: UISwitch!
     
     @IBOutlet weak var Up_Down: UIView!
     @IBOutlet weak var Left_Right: UIView!
-    
-    //Function to display output
-    @IBOutlet weak var x_acce: UILabel!
-    @IBOutlet weak var y_acce: UILabel!
-    @IBOutlet weak var z_acce: UILabel!
-    
-    @IBOutlet weak var x_rota: UILabel!
-    @IBOutlet weak var y_rota: UILabel!
-    @IBOutlet weak var z_rota: UILabel!
-    
-    var ID:Int64 = 1
-    var pre_center_b:CGFloat = 0
-    var pre_center_l:CGFloat = 0
-    
+
     @IBOutlet weak var Beschleunigen_btn: UIImageView!
     @IBOutlet weak var Lengkung_btn: UIImageView!
     
@@ -63,7 +39,20 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
     var isSteeringGyroRV:Bool = true
     var gyroupdateinterval:NSTimeInterval = 0.5
     
+    //Function to display output
     
+    var ID:Int64 = 1
+    var pre_center_b:CGFloat = 0
+    var pre_center_l:CGFloat = 0
+    
+    var timer = NSTimer()
+    var startcommandisactive = false
+    var thisisfirsttime = true
+    
+    //Motion manager
+    var motionManager = CMMotionManager()
+    
+    var mqtt:CocoaMQTT? = nil
     
     @IBAction func GyroOption(sender: UISwitch) {
         
@@ -74,10 +63,10 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
             
             if startcommandisactive{
                 timer.invalidate()
-                stopaction_btn.hidden = true
+        
             }
             
-            startaction_btn.hidden = true
+          
             Beschleunigen_btn.hidden = true
             Lengkung_btn.hidden = true
             Up_Down.hidden = true
@@ -94,6 +83,7 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
                 if (error != nil){
                     print("\(error)")
                 }
+                
             })
             
             
@@ -121,15 +111,12 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
     
     //Reset Function to set the property to when gyro is not available
     func reset(){
-        
+        startStopBtn.setTitle("Start", forState: UIControlState.Normal)
         motionManager.stopAccelerometerUpdates()
         motionManager.stopGyroUpdates()
-        //startaction_btn.hidden = false
         thisisfirsttime = true
         
         //hid the the button for forwards and reverse in gyro
-        Forward_right_btn.hidden = true
-        Forward_left_btn.hidden = true
         Reverse_left_btn.hidden = true
         Reverse_right_btn.hidden = true
         
@@ -138,14 +125,6 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
         Up_Down.hidden = false
         Left_Right.hidden = false
         Gyro_Manual.on = false
-        
-        x_acce.text = ""
-        y_acce.text = ""
-        z_acce.text = ""
-        
-        x_rota.text = ""
-        y_rota.text = ""
-        z_rota.text = ""
         
         timer.invalidate()
         
@@ -161,53 +140,33 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
     
     //funtion to deal with the acceleration data
     func outputAccelerationData(acceleration: CMAcceleration){
-        
-        if motionManager.accelerometerActive{
-            
-            let x_acceleration:Float
-            let y_acceleration:Float
-            let z_acceleration:Float
             
             if motionManager.accelerometerActive{
-                x_acceleration = Float(round(1000*acceleration.x)/1000)
-                y_acceleration = Float(round(1000*acceleration.y)/1000)
-                z_acceleration = Float(round(1000*acceleration.z)/1000)
+                let x_acceleration = Float(round(1000*acceleration.x)/1000)
+                let y_acceleration = Float(round(1000*acceleration.y)/1000)
+                let z_acceleration = Float(round(1000*acceleration.z)/1000)
                 
-                //Display acceleration value
-                x_acce.text = String(x_acceleration)
-                y_acce.text = String(y_acceleration)
-                z_acce.text = String(z_acceleration)
-                
-                tcpsendinfo(dataX: x_acceleration, dataY: y_acceleration)
+                mqttSendInfo(dataX: x_acceleration, dataY: y_acceleration)
                 
             }
-        }
+        
         
     }
     
     
     //funtion to deal with Gyro data
     func outputRotationData(rotation:CMRotationRate){
-        
-        if motionManager.gyroActive{
-            let x_rotation:Float
-            let y_rotation:Float
-            let z_rotation:Float
             
-            if motionManager.gyroActive{
-                x_rotation = Float(round(1000*rotation.x)/1000)
-                y_rotation = Float(round(1000*rotation.y)/1000)
-                z_rotation = Float(round(1000*rotation.z)/1000)
-                
-                //Display acceleration value
-                x_rota.text = String(x_rotation)
-                y_rota.text = String(y_rotation)
-                z_rota.text = String(z_rotation)
-                
-                //UnComment This part to allow the gyro msg send to the server 
-                //tcpsendinfo(dataX: x_rotation , dataY: y_rotation, dataZ: z_rotation)
-            }
+        if motionManager.gyroActive{
+            let x_rotation = Float(round(1000*rotation.x)/1000)
+            let y_rotation = Float(round(1000*rotation.y)/1000)
+            let z_rotation = Float(round(1000*rotation.z)/1000)
+            
+            
+            //UnComment This part to allow the gyro msg send to the server
+            //tcpsendinfo(dataX: x_rotation , dataY: y_rotation, dataZ: z_rotation)
         }
+        
     }
     
     
@@ -218,7 +177,7 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
         gyroupdateinterval = gyro_senstivitiy
     }
     
-    func tcpsendinfo(dataX dataX: Float,dataY:Float){
+    func mqttSendInfo(dataX dataX: Float,dataY:Float){
         
         let s_datax = plusminussign(dataX)
         let s_datay = plusminussign(dataY)
@@ -228,12 +187,12 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
         
         //Adding ID functionally
         //let finaldata = accumulated_Data + "ID" + String(ID) + "@\n"
-        let finaldata = "ID=" + String(ID) + ":" + accumulated_Data + "@\n"
+        let finaldata = "ID=" + String(ID) + ":" + accumulated_Data + "\n"
         
         ID = ID + 1
         
         //This is where the Delegate to send data appear
-        delegate?.dataSend(finaldata)
+        mqtt?.publish(UDTopic.SpeedSteering.rawValue, withString: finaldata)
         
     }
     
@@ -277,12 +236,14 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
         reset()
         
         //Do not delete the above code
-
-        
     }
     
     override func viewDidLoad() {
-        delegateRetrive?.activateDelegateCommunication()
+        mqtt?.ping()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        mqtt?.ping()
     }
     
     @IBAction func LengkungPan(sender: UIPanGestureRecognizer) {
@@ -357,24 +318,22 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
     }
     
     
-    //funtion what happens when the button start is pressed
-    @IBAction func Start_Action(sender: UIButton) {
-        startaction_btn.hidden = true
-        stopaction_btn.hidden = false
-        startcommandisactive = true
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(RemotePanelViewController.dataManagerIfNonGyroDataIssend), userInfo: nil, repeats: true)
-        
+    
+    @IBAction func StartStop(sender: UIButton) {
+        let stopMessage = "ID=" + String(ID) + ":ST:0:0\n"
+        if(startStopBtn.currentTitle!.containsString(StartStopTitle.Start.rawValue)){
+            startcommandisactive = true
+            timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(RemotePanelViewController.dataManagerIfNonGyroDataIssend), userInfo: nil, repeats: true)
+            startStopBtn.setTitle(StartStopTitle.Stop.rawValue, forState: UIControlState.Normal)
+
+        }else{
+            mqtt?.publish(UDTopic.SpeedSteering.rawValue, withString: stopMessage)
+            timer.invalidate()
+            startcommandisactive = false
+            startStopBtn.setTitle(StartStopTitle.Start.rawValue, forState: UIControlState.Normal)
+        }
     }
-    
-    
-    
-    @IBAction func Stop_Action(sender: UIButton) {
-        
-        timer.invalidate()
-        startaction_btn.hidden = false
-        stopaction_btn.hidden = true
-        startcommandisactive = false
-    }
+
     
 
     
@@ -393,12 +352,11 @@ class RemotePanelViewController: UIViewController, SettingDelegates{
         
         //Adding ID functionality
         //let finaldata:String = accumulatedData + ":ID" + String(ID) + "@\n"
-        let finaldata:String = "ID=" + String(ID) + ":" + accumulatedData + "@\n"
+        let finaldata:String = "ID=" + String(ID) + ":" + accumulatedData + "\n"
         ID = ID + 1
         
     
-        delegate?.dataSend(finaldata)
-    }
+        mqtt?.publish(UDTopic.SpeedSteering.rawValue, withString: finaldata)    }
 }
 
 
@@ -412,4 +370,62 @@ protocol DataSendDelegate: class{
 //Protocol to make the communication to retrieve
 protocol SettingDataRetrive: class{
     func activateDelegateCommunication()
+}
+
+extension RemotePanelViewController : CocoaMQTTDelegate{
+    func mqtt(mqtt: CocoaMQTT, didConnect host: String, port: Int) {
+        print("didConnect \(host):\(port)")
+    }
+    
+    func mqtt(mqtt: CocoaMQTT, didConnectAck ack: CocoaMQTTConnAck) {
+        //print("didConnectAck \(ack.rawValue)")
+        if ack == .ACCEPT {
+            mqtt.subscribe(UDTopic.speedReading.rawValue, qos: CocoaMQTTQOS.QOS1)
+            mqtt.ping()
+  
+        }
+        
+    }
+    
+    func mqtt(mqtt: CocoaMQTT, didPublishMessage message: CocoaMQTTMessage, id: UInt16) {
+        print("didPublishMessage with message: \(message.string)")
+    }
+    
+    func mqtt(mqtt: CocoaMQTT, didPublishAck id: UInt16) {
+        print("didPublishAck with id: \(id)")
+    }
+    
+    func mqtt(mqtt: CocoaMQTT, didReceiveMessage message: CocoaMQTTMessage, id: UInt16 ) {
+        print("didReceivedMessage: \(message.string) with id \(id)")
+    }
+    
+    func mqtt(mqtt: CocoaMQTT, didSubscribeTopic topic: String) {
+        print("didSubscribeTopic to \(topic)")
+    }
+    
+    func mqtt(mqtt: CocoaMQTT, didUnsubscribeTopic topic: String) {
+        print("didUnsubscribeTopic to \(topic)")
+    }
+    
+    func mqttDidPing(mqtt: CocoaMQTT) {
+        print("didPing")
+        
+    }
+    
+    func mqttDidReceivePong(mqtt: CocoaMQTT) {
+        _console("didReceivePong")
+        
+    }
+    
+    func mqttDidDisconnect(mqtt: CocoaMQTT, withError err: NSError?) {
+        _console("mqttDidDisconnect")
+  
+    }
+    
+    func _console(info: String) {
+        print("Delegate: \(info)")
+    }
+    
+    
+
 }
